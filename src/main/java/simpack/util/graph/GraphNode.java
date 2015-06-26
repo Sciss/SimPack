@@ -261,7 +261,8 @@ public class GraphNode implements IGraphNode, Serializable,
 
 	/**
 	 * Returns true if a certain node equals this node.
-	 * 
+	 * This uses the <code>equals()</code>-method of the wrapped user objects.
+	 *
 	 * @param node
 	 *            graph node
 	 * 
@@ -269,7 +270,6 @@ public class GraphNode implements IGraphNode, Serializable,
 	 */
 	public boolean equals(Object node) {
 		GraphNode n = (GraphNode) node;
-		// this uses the equals()-method of the wrapped user objects
 		return n.userObject.equals(this.userObject);
 	}
 

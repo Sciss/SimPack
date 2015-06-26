@@ -164,7 +164,7 @@ public class MappedVertex implements Serializable {
 			// this uses the equals()-methods of the left and right user objects
 			return getLeftNode().equals(mv.getLeftNode())
 					&& getRightNode().equals(mv.getRightNode());
-		} else if ((isGroup() && !mv.isGroup()) || (!isGroup() && mv.isGroup())) {
+		} else if (isGroup() != mv.isGroup()) {
 			// only one of the two nodes under comparison is a group
 			// thus unequal
 			// TODO: groups of size one!!! problem?

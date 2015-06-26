@@ -1,6 +1,6 @@
 name             := "SimPack"
 
-version          := "0.1.0" // was: "0.91"
+version          := "0.1.0-SNAPSHOT" // was: "0.91"
 
 organization     := "de.sciss"  // for publishing
 
@@ -13,7 +13,6 @@ licenses         := Seq("LGPL v2.1+" -> url("http://www.gnu.org/licenses/lgpl-2.
 scalaVersion     := "2.11.6"
 
 crossPaths       := false  // this is just a Java project right now!
-
 autoScalaLibrary := false
 
 javacOptions in (Compile, compile) ++= Seq("-g", "-source", "1.6", "-target", "1.6")
