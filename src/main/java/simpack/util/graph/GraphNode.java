@@ -198,9 +198,10 @@ public class GraphNode implements IGraphNode, Serializable,
 	 * @see simpack.api.IGraphNode#addPredecessor(simpack.api.IGraphNode)
 	 */
 	public void addPredecessor(IGraphNode node) {
-		predecessorSet.add(node);
-		adjacentSet.add(node);
-		inDegree++;
+		if (predecessorSet.add(node)) {
+			adjacentSet.add(node);
+			inDegree++;
+		}
 	}
 
 	/*
@@ -209,9 +210,10 @@ public class GraphNode implements IGraphNode, Serializable,
 	 * @see simpack.api.IGraphNode#addSuccessor(simpack.api.IGraphNode)
 	 */
 	public void addSuccessor(IGraphNode node) {
-		successorSet.add(node);
-		adjacentSet.add(node);
-		outDegree++;
+		if (successorSet.add(node)) {
+            adjacentSet.add(node);
+            outDegree++;
+        }
 	}
 
 	/*

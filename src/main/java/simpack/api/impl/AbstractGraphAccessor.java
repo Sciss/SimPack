@@ -162,7 +162,7 @@ public abstract class AbstractGraphAccessor implements IGraphAccessor {
 		}
 		logger.debug("Adding " + sourceNode.toString() + " -> "
 				+ targetNode.toString());
-		sourceNode.addSuccessor(targetNode);
+		sourceNode.addSuccessor  (targetNode);
 		targetNode.addPredecessor(sourceNode);
 	}
 }

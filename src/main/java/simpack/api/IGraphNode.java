@@ -86,6 +86,8 @@ public interface IGraphNode {
 
 	/**
 	 * Adds a predecessor to the node.
+	 * If the node is already in the set of predecessors,
+     * nothing is changed.
 	 * 
 	 * @param node
 	 *            the predecessor
@@ -95,7 +97,9 @@ public interface IGraphNode {
 
 	/**
 	 * Adds a successor to the node.
-	 * 
+     * If the node is already in the set of successors,
+     * nothing is changed.
+	 *
 	 * @param node
 	 *            the successor
 	 * 
