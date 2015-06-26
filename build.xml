@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+$Id: build.xml 699 2007-11-27 09:05:36Z ddis $
+Ant Buildfile
+-->
+<project name="simpack" default="compile" basedir=".">
+	<description>
+This is the main build file of SimPack from the University of Zurich, Switzerland.
+	</description>
+
+	<!-- Configuration properties -->
+	<property name="rev" value="0.91" />
+	<property name="debug" value="false" />
+	<property name="test.suite" value="simpack.tests.CompleteTestSuite" />
+	<property name="test.report" location="TEST-${DSTAMP}.txt" />
+	<property name="src" location="src" />
+	<property name="src.test" location="tests" />
+	<property name="build.base" location="bin" />
+	<property name="build" location="${build.base}/simpack" />
+	<property name="build.test" location="${build.base}/tests" />
+	<property name="build.conf" location="${build.base}/conf" />
+	<property name="build.cobertura" location="${build.base}/cobertura" />
+	<property name="dist" location="dist" />
+	<property name="dist.src" location="${dist}/${ant.project.name}-${rev}" />
+	<property name="docs" location="docs" />
+	<property name="docs.api" location="${docs}/javadoc" />
+	<property name="docs.cobertura" location="${docs}/cobertura" />
+
+	<property name="jar.name" value="${ant.project.name}-${rev}-bin.jar" />
+	<property name="jar.name.tests" value="${ant.project.name}-${rev}-all-bin.jar" />
+
+	<property name="zip.name.src" value="${ant.project.name}-${rev}-src.zip" />
+	<property name="zip.name.src.all" value="${ant.project.name}-${rev}-all-src.zip" />
+
+	<property name="lib" location="lib" />
+	<property name="conf" location="conf" />
+	<property name="figures" location="figures" />
+	<property name="ontology" location="ontology" />
+	<property name="workflow" location="workflow" />
+	<property name="data" location="data" />
+	<property name="logfile" value="log4j.properties" />
+	<property name="sourcelang" value="1.5" />
+        <property name="targetlang" value="1.5" />
+
+	<!-- General classpath -->
+	<path id="project.class.path">
+		<pathelement path="${java.class.path}" />
+		<pathelement location="${conf}" />
+		<pathelement location="${src}" />
+		<fileset dir="${lib}/arq">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/cobertura">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/colt">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/eclipse">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/famix">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/gub">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/jena">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/jgrapht">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/junit">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/lucene">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/owl-s">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/owl-s/axis">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/owl-s/jena/">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/owl-s/pellet">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/owl-s/xsdlib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/owlsmx">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/owlsmx/owlapi">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/secondstring">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/simmetrics">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/taverna">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib}/alignapi">
+                        <include name="**/*.jar" />
+                </fileset>
+	</path>
+
+	<!-- Target: INIT -->
+	<target name="init">
+		<tstamp />
+		<mkdir dir="${build}" />
+		<mkdir dir="${build.test}" />
+		<mkdir dir="${build.cobertura}" />
+		<available property="junit.present" classpathref="project.class.path" classname="junit.framework.TestCase" />
+		<available property="cobertura.present" file="cobertura-1.7.jar" filepath="${lib}/cobertura" />
+	</target>
+
+	<!-- Target: COMPILE -->
+	<target name="compile" depends="init" description="compile source (excluding tests)">
+		<javac source="${sourcelang}" target="${targetlang}" classpathref="project.class.path" srcdir="${src}" destdir="${build}" debug="${debug}">
+			<include name="**/*.java" />
+		</javac>
+	</target>
+
+	<!-- Target: COMPILE-TESTS -->
+	<target name="compile-tests" depends="compile" description="compile source (including tests)">
+		<fail unless="junit.present" />
+		<javac source="${sourcelang}" target="${targetlang}" srcdir="${src.test}" destdir="${build.test}">
+			<classpath>
+				<path refid="project.class.path" />
+				<pathelement location="${build}" />
+			</classpath>
+			<include name="**/*.java" />
+		</javac>
+	</target>
+
+	<!-- Target: DIST -->
+	<target name="dist" depends="clean,compile,compile-tests" description="generate binary distribution jar (including tests)">
+		<mkdir dir="${dist}" />
+		<jar jarfile="${dist}/${jar.name}" basedir="${build}">
+			<fileset dir="${build}" />
+			<fileset dir="${build.test}" />
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- Target: SRC-DIST -->
+	<target name="src-dist" depends="clean,init" description="source distribution">
+		<mkdir dir="${dist}" />
+		<mkdir dir="${dist.src}" />
+
+		<copy todir="${dist.src}/src">
+			<fileset dir="${src}" includes="**" />
+		</copy>
+		<copy todir="${dist.src}/tests">
+			<fileset dir="${src.test}" includes="**" />
+		</copy>
+		<copy todir="${dist.src}/conf">
+			<fileset dir="${conf}" includes="**" />
+		</copy>
+		<copy todir="${dist.src}/ontology">
+			<fileset dir="${ontology}" includes="**" />
+		</copy>
+		<copy todir="${dist.src}/figures">
+			<fileset dir="${figures}" includes="**" />
+		</copy>
+		<copy todir="${dist.src}/workflow">
+			<fileset dir="${workflow}" includes="**" />
+		</copy>
+		<copy todir="${dist.src}/data">
+			<fileset dir="${data}" includes="**" />
+		</copy>
+
+		<copy todir="${dist.src}" file="AUTHORS" />
+		<copy todir="${dist.src}" file="build.xml" />
+		<copy todir="${dist.src}" file="INSTALL" />
+		<copy todir="${dist.src}" file="LICENSE" />
+		<copy todir="${dist.src}" file="README" />
+		
+		<zip destfile="${dist}/${zip.name.src}" basedir="${dist}" />
+	</target>
+
+	<!-- Target: SRC-DIST-ALL-JARS -->
+	<target name="src-dist-all" depends="clean,init" description="includes everything (external jars, data, figures, etc.)">
+    		<mkdir dir="${dist}" />
+                <mkdir dir="${dist.src}" />
+
+                <copy todir="${dist.src}/src">
+                        <fileset dir="${src}" includes="**" />
+                </copy>
+                <copy todir="${dist.src}/tests">
+                        <fileset dir="${src.test}" includes="**" />
+                </copy>
+                <copy todir="${dist.src}/conf">
+                        <fileset dir="${conf}" includes="**" />
+                </copy>
+                <copy todir="${dist.src}/ontology">
+                        <fileset dir="${ontology}" includes="**" />
+                </copy>
+                <copy todir="${dist.src}/figures">
+                        <fileset dir="${figures}" includes="**" />
+                </copy>
+                <copy todir="${dist.src}/workflow">
+                        <fileset dir="${workflow}" includes="**" />
+                </copy>
+                <copy todir="${dist.src}/data">
+                        <fileset dir="${data}" includes="**" />
+                </copy>
+		<copy todir="${dist.src}/lib">
+                        <fileset dir="${lib}" includes="**" />
+                </copy>
+
+                <copy todir="${dist.src}" file="AUTHORS" />
+                <copy todir="${dist.src}" file="build.xml" />
+                <copy todir="${dist.src}" file="INSTALL" />
+                <copy todir="${dist.src}" file="LICENSE" />
+                <copy todir="${dist.src}" file="README" />
+
+                <zip destfile="${dist}/${zip.name.src.all}" basedir="${dist}" />
+	</target>
+
+	<!-- Target: TEST -->
+	<!--target name="test" depends="compile-tests" description="run tests">
+		<java fork="yes" classname="junit.textui.TestRunner" taskname="junit" failonerror="true">
+			<arg value="${test.suite}" />
+			<classpath>
+				<path refid="project.class.path" />
+				<pathelement location="${build.cobertura}" />
+				<pathelement location="${dist}/${jar.name}" />
+				<pathelement location="${build.test}" />
+				<pathelement location="${cobertura-home}/cobertura.jar" />
+				<pathelement path="" />
+			</classpath>
+		</java>
+	</target -->
+
+	<!-- Target: COBERTURA -->
+	<!--taskdef classpath="${lib}/cobertura/cobertura-1.7.jar" resource="tasks.properties" onerror="ignore" />
+	<target name="cobertura-inject" depends="compile" if="cobertura.present">
+		<cobertura-instrument todir="${build.cobertura}">
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</cobertura-instrument>
+	</target>
+	<target name="cobertura" depends="cobertura-inject,test" description="create cobertura report" if="cobertura.present">
+		<cobertura-report srcdir="${src}" destdir="${docs.cobertura}" />
+	</target -->
+
+	<!-- Target: DOCS -->
+	<target name="docs" description="generate documentation">
+		<javadoc destdir="${docs.api}" author="true" version="true" use="true" windowtitle="SimPack API">
+			<classpath refid="project.class.path" />
+			<fileset dir="${src}" defaultexcludes="yes">
+				<include name="**" />
+				<exclude name="${logfile}" />
+			</fileset>
+			<doctitle>
+				<![CDATA[<h1>SimPack</h1>]]></doctitle>
+		<bottom>
+			<![CDATA[<i>Copyright &#169; 2006. All Rights Reserved.</i>]]></bottom>
+	<group title="Similarity Measures" packages="simpack.measure.graph.*,simpack.measure.it.*,simpack.measure.sequence.*,simpack.measure.spezialized.*,simpack.measure.string.*,simpack.measure.tree.*,simpack.measure.vector.*,simpack.measure.weightingscheme.*" />
+	<group title="External Similarity Measures" packages="simpack.measure.external.*" />
+	<group title="Data Accessors" packages="simpack.accessor.*" />
+	<group title="Interface definitions and default implementations" packages="simpack.api.*" />
+	<group title="Utilities" packages="simpack.util.*,simpack.exception.*" />
+	<group title="Tests" packages="simpack.tests.*" />
+	<link offline="false" href="http://java.sun.com/j2se/1.5.0/docs/api/" />
+</javadoc>
+</target>
+
+<!-- Target: CLEAN -->
+<target name="clean" description="clean up the mess">
+<delete dir="${build}" />
+<delete dir="${build.test}" />
+<delete dir="${build.cobertura}" />
+<delete file="${test.report}" />
+<delete dir="${dist}" />
+<delete dir="${docs.api}" />
+<delete dir="${docs.cobertura}" />
+<delete file="cobertura.ser" />
+</target>
+</project>

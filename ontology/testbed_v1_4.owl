@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY rdf     'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+    <!ENTITY rdfs    'http://www.w3.org/2000/01/rdf-schema#'>
+    <!ENTITY xsd     'http://www.w3.org/2000/10/XMLSchema#'>
+    <!ENTITY owl     'http://www.w3.org/2002/07/owl#'>
+    <!ENTITY testbed 'http://lsdis.cs.uga.edu/proj/semdis/testbed/#'>
+]>
+
+<rdf:RDF
+    xmlns:rdf="&rdf;"
+    xmlns:rdfs="&rdfs;"
+    xmlns:xsd="&xsd;"
+    xmlns:owl="&owl;"
+    xmlns:testbed="&testbed;"
+    xml:base="&testbed;"
+>
+
+
+<owl:Ontology rdf:about="">
+  <owl:versionInfo>testbed.owl, v 1.4 2004/04/26</owl:versionInfo>
+  <rdfs:comment>SWETO Ontology v1.4</rdfs:comment>
+  <rdfs:label>SWETO Ontology</rdfs:label>
+</owl:Ontology>
+
+<!-- ************ CLASSES ************ -->
+
+<owl:Class rdf:ID='Place'>
+  <rdfs:label xml:lang="en">Place</rdfs:label>
+  <rdfs:comment xml:lang="en">Typically, entities of type Place include continents, regions, countries, states,  cities</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID='Thing'>
+  <rdfs:label xml:lang="en">Thing</rdfs:label>
+  <rdfs:comment xml:lang="en">This class encompasses one of the three major divisions of the ontology by discarding persons and places</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID='Person'>
+  <rdfs:label xml:lang="en">Person</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of person</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:ID='Manmade_Structure'>
+  <rdfs:label xml:lang="en">Manmade_Structure</rdfs:label>
+  <rdfs:comment xml:lang="en">Any permanent or semi-permanent man-made structure on the earth</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Thing" />
+</owl:Class>
+
+<owl:Class rdf:ID='Natural_Feature'>
+  <rdfs:label xml:lang="en">Natural_Feature</rdfs:label>
+  <rdfs:comment xml:lang="en">Any natural feature or semi-natural feature (park, Levee, trail) found on the Earth</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Thing" />
+</owl:Class>
+
+<owl:Class rdf:ID='Politician'>
+  <rdfs:label xml:lang="en">Politician</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Person" />
+</owl:Class>
+
+<owl:Class rdf:ID='Terrorist'>
+  <rdfs:label xml:lang="en">Terrorist</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Person" />
+</owl:Class>
+
+<owl:Class rdf:ID='Researcher'>
+  <rdfs:label xml:lang="en">Researcher</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a researcher person</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Person" />
+</owl:Class>
+
+<owl:Class rdf:ID='Computer_Science_Researcher'>
+  <rdfs:label xml:lang="en">Computer Science Researcher</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Researcher" />
+</owl:Class>
+
+<owl:Class rdf:ID='Professor'>
+  <rdfs:label xml:lang="en">Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a professor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Person" />
+</owl:Class>
+
+<owl:Class rdf:ID='Computer_Science_Professor'>
+  <rdfs:label xml:lang="en">Computer Science Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a computer science  professor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Professor" />
+</owl:Class>
+
+<owl:Class rdf:ID='Mathematics_Professor'>
+  <rdfs:label xml:lang="en">Mathematics Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a mathematics  professor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Professor" />
+</owl:Class>
+
+<owl:Class rdf:ID='Statistics_Professor'>
+  <rdfs:label xml:lang="en">Statistics Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a statistics professor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Professor" />
+</owl:Class>
+
+<owl:Class rdf:ID='Engineering_Professor'>
+  <rdfs:label xml:lang="en">Engineering Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of an  engineeringprofessor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Professor" />
+</owl:Class>
+
+<owl:Class rdf:ID='Physics_Professor'>
+  <rdfs:label xml:lang="en">Physics Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a physicsprofessor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Professor" />
+</owl:Class>
+
+<owl:Class rdf:ID='Publication'>
+  <rdfs:label xml:lang="en">Publication</rdfs:label>
+  <rdfs:comment xml:lang="en">    </rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Thing" />
+</owl:Class>
+
+<owl:Class rdf:ID='Scientific_Publication'>
+  <rdfs:label xml:lang="en">Scientific Publication</rdfs:label>
+  <rdfs:comment xml:lang="en">Scientific publications include books, journal articles, conference  papers</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Publication" />
+</owl:Class>
+
+<owl:Class rdf:ID='Book'>
+  <rdfs:label xml:lang="en">Book</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Publication" />
+</owl:Class>
+
+<owl:Class rdf:ID='Journal'>
+  <rdfs:label xml:lang="en">Journal</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Publication" />
+</owl:Class>
+
+<owl:Class rdf:ID='Conference'>
+  <rdfs:label xml:lang="en">Conference</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Publication" />
+</owl:Class>
+
+<owl:Class rdf:ID='University'>
+  <rdfs:label xml:lang="en">University</rdfs:label>
+  <rdfs:comment xml:lang="en">University, Technical Institute or College</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Complex" />
+</owl:Class>
+
+<owl:Class rdf:ID='Academic_Department'>
+  <rdfs:label xml:lang="en">Academic Department</rdfs:label>
+  <rdfs:comment xml:lang="en">Academic Department within a University or College</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Thing" />
+</owl:Class>
+
+
+<owl:Class rdf:ID='Mathematics_Department'>
+  <rdfs:label xml:lang="en">Mathematics Department</rdfs:label>
+  <rdfs:comment xml:lang="en">Mathematics (Academic) Department within a University or College</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Academic_Department" />
+</owl:Class>
+
+
+<owl:Class rdf:ID='Statistics_Department'>
+  <rdfs:label xml:lang="en">Statistics Department</rdfs:label>
+  <rdfs:comment xml:lang="en">Statistics (Academic) Department within a University or College</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Academic_Department" />
+</owl:Class>
+
+
+<owl:Class rdf:ID='Computer_Science_Department'>
+  <rdfs:label xml:lang="en">Computer Science Department</rdfs:label>
+  <rdfs:comment xml:lang="en">Computer Science (Academic) Department within a University or College</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Academic_Department" />
+</owl:Class>
+
+
+<owl:Class rdf:ID='Engineering_Department'>
+  <rdfs:label xml:lang="en">Engineering Department</rdfs:label>
+  <rdfs:comment xml:lang="en">Engineering (Academic) Department within a University or College</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Academic_Department" />
+</owl:Class>
+
+
+<owl:Class rdf:ID='Physics_Department'>
+  <rdfs:label xml:lang="en">Physics Department</rdfs:label>
+  <rdfs:comment xml:lang="en">Physics (Academic) Department within a University or College</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Academic_Department" />
+</owl:Class>
+
+<owl:Class rdf:ID='Publication_Classification'>
+  <rdfs:label xml:lang="en">Publication Classification</rdfs:label>
+  <rdfs:comment xml:lang="en">Scientific publications classifications</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Thing" />
+</owl:Class>
+
+<owl:Class rdf:ID='ACM_Top_level_Classification'>
+  <rdfs:label xml:lang="en">ACM Top level Classification</rdfs:label>
+  <rdfs:comment xml:lang="en">The top level ACM publications classifications</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Publication_Classification" />
+</owl:Class>
+
+<owl:Class rdf:ID='ACM_Second_level_Classification'>
+  <rdfs:label xml:lang="en">ACM Second level Classification</rdfs:label>
+  <rdfs:comment xml:lang="en">The Second level ACM publications classifications</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Publication_Classification" />
+</owl:Class>
+
+<owl:Class rdf:ID='ACM_Third_level_Classification'>
+  <rdfs:label xml:lang="en">ACM Third level Classification</rdfs:label>
+  <rdfs:comment xml:lang="en">The Third level ACM publications classifications</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Publication_Classification" />
+</owl:Class>
+
+<owl:Class rdf:ID='ACM_Subject_Descriptors'>
+  <rdfs:label xml:lang="en">ACM_Subject_Descriptors</rdfs:label>
+  <rdfs:comment xml:lang="en">Subject descriptors with reference to a classification</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Thing" />
+</owl:Class>
+
+
+<owl:Class rdf:ID='Country'>
+  <rdfs:label xml:lang="en">Country</rdfs:label>
+  <rdfs:comment xml:lang="en">Countries in the world, examples: Mexico, Austria, India</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='Region'>
+  <rdfs:label xml:lang="en">Region</rdfs:label>
+  <rdfs:comment xml:lang="en">Regions in the world, examples: North America, Central America, South  America</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='City'>
+  <rdfs:label xml:lang="en">City</rdfs:label>
+  <rdfs:comment xml:lang="en">Cities in the world, examples: Athens, Atlanta, Chihuahua, New York</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='State'>
+  <rdfs:label xml:lang="en">State</rdfs:label>
+  <rdfs:comment xml:lang="en">States or Provinces of countries, examples: Georgia, Alaska, Alberta</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='County'>
+  <rdfs:label xml:lang="en">County</rdfs:label>
+  <rdfs:comment xml:lang="en">A County or parish of a state or province. Counties of Georgia (USA), examples: Fulton, Cobb, Hall, Clarke</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='Locale'>
+  <rdfs:label xml:lang="en">Locale</rdfs:label>
+  <rdfs:comment xml:lang="en">Place at which there is or was human activity; it does not include populated places, mines, and dams (battlefield, crossroad, camp, farm, ghost town, landing, railroad siding, ranch, ruins, site, station, windmill)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='Airport'>
+  <rdfs:label xml:lang="en">Airport</rdfs:label>
+  <rdfs:comment xml:lang="en">Manmade facility maintained for the use of aircraft (airfield, airstrip, landing field, landing strip). Airports in the world, examples: LAX - Los Angeles, ATL - Atlanta</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Complex" />
+</owl:Class>
+
+<owl:Class rdf:ID='Event'>
+  <rdfs:label xml:lang="en">Event</rdfs:label>
+  <rdfs:comment xml:lang="en">Important events, examples: 9/11, Suicide Attacks, Scientific  Conference</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Thing" />
+</owl:Class>
+
+<owl:Class rdf:ID='Terrorist_Attack'>
+  <rdfs:label xml:lang="en">Terrorist_Attack</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Event" />
+</owl:Class>
+
+
+<owl:Class rdf:ID='Organization'>
+  <rdfs:label xml:lang="en">Organization</rdfs:label>
+  <rdfs:comment xml:lang="en">Organizations, examples: CIA, Worldbank, UN</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Thing" />
+</owl:Class>
+
+<owl:Class rdf:ID='Academic_Organization'>
+  <rdfs:label xml:lang="en">Academic Organization</rdfs:label>
+  <rdfs:comment xml:lang="en">Academic organizations, examples: UGA, CalTech, ISI</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Organization" />
+</owl:Class>
+
+<owl:Class rdf:ID='Terrorist_Organization'>
+  <rdfs:label xml:lang="en">Terrorist_Organization</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Organization" />
+</owl:Class>
+
+<owl:Class rdf:ID='Political_Organization'>
+  <rdfs:label xml:lang="en">Political Organization</rdfs:label>
+  <rdfs:comment xml:lang="en">Political organizations, examples: republican party, green party, democratic  party</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Organization" />
+</owl:Class>
+
+<owl:Class rdf:ID='Financial_Organization'>
+  <rdfs:label xml:lang="en">Financial Organization</rdfs:label>
+  <rdfs:comment xml:lang="en">Financial Organization, examples: bank, credit union</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Organization" />
+</owl:Class>
+
+<owl:Class rdf:ID='Company'>
+  <rdfs:label xml:lang="en">Company</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Organization" />
+</owl:Class>
+
+<owl:Class rdf:ID='Water_Structure'>
+  <rdfs:label xml:lang="en">Water_Structure</rdfs:label>
+  <rdfs:comment xml:lang="en">Any manmade structure built to control water or make use of its resources</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Manmade_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Transport_Structure'>
+  <rdfs:label xml:lang="en">Transport_Structure</rdfs:label>
+  <rdfs:comment xml:lang="en">Any manmade structure built for transportation purposes</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Manmade_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Complex'>
+   <rdfs:label xml:lang="en">Complex</rdfs:label>
+   <rdfs:comment xml:lang="en">Any manmade or human designed area combining buildings and land for a specifice purpose other than recreation (Univeristy, Cementary, Office park)</rdfs:comment>
+   <rdfs:subClassOf rdf:resource="#Manmade_Structure" />
+</owl:Class>
+
+ <owl:Class rdf:ID='Extraction_Structure'>
+   <rdfs:label xml:lang="en">Extraction_Structure</rdfs:label>
+   <rdfs:comment xml:lang="en">Any manmade structure built for extracting resouces from the earth</rdfs:comment>
+   <rdfs:subClassOf rdf:resource="#Manmade_Structure" />
+</owl:Class>
+
+
+<owl:Class rdf:ID='Land_Feature'>
+  <rdfs:label xml:lang="en">Land_Feature</rdfs:label>
+  <rdfs:comment xml:lang="en">Any land formation or topographic feature determined by elevation or terrain</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Natural_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Water_Feature'>
+  <rdfs:label xml:lang="en">Water_Feature</rdfs:label>
+  <rdfs:comment xml:lang="en">Any geographic feature made up of water or formed by water.</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Natural_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Recreation_Feature'>
+  <rdfs:label xml:lang="en">Recreation_Feature</rdfs:label>
+  <rdfs:comment xml:lang="en">Natural features altered by man or set aside for a specific use.</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Natural_Feature" />
+</owl:Class>
+
+
+<owl:Class rdf:ID='Natural_Arch'>
+  <rdfs:label xml:lang="en">Natural_Arch</rdfs:label>
+  <rdfs:comment xml:lang="en">Natural arch-like opening in a rock mass (bridge, natural bridge, sea arch)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Area'>
+  <rdfs:label xml:lang="en">Area</rdfs:label>
+  <rdfs:comment xml:lang="en">Any one of several areally extensive natural features not included in other categories (badlands, barren, delta, fan, garden)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Arroyo'>
+  <rdfs:label xml:lang="en">Arroyo</rdfs:label>
+  <rdfs:comment xml:lang="en">Watercourse or channel through which water may occasionally flow (coulee, draw, gully, wash)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Bar'>
+  <rdfs:label xml:lang="en">Bar</rdfs:label>
+  <rdfs:comment xml:lang="en">Natural accumulation of sand, gravel, or alluvium forming an underwater or exposed embankment (ledge, reef, sandbar, shoal, spit)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Basin'>
+  <rdfs:label xml:lang="en">Basin</rdfs:label>
+  <rdfs:comment xml:lang="en">natural depression or relatively low area enclosed by higher land (amphitheater, cirque, pit, sink)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Bay'>
+  <rdfs:label xml:lang="en">Bay</rdfs:label>
+  <rdfs:comment xml:lang="en">Indentation of a coastline orshoreline enclosing a part of a body of water; a body of water partly surrounded by land (arm, bight, cove, estuary, gulf, inlet, sound)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Beach'>
+  <rdfs:label xml:lang="en">Beach</rdfs:label>
+  <rdfs:comment xml:lang="en">The sloping shore along a body of water that is washed by waves or tides and is usually covered by sand or gravel (coast, shore, strand)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Natural_Bench'>
+  <rdfs:label xml:lang="en">Bench</rdfs:label>
+  <rdfs:comment xml:lang="en">Area of relatively level land on the flank of an elevation such as a hill, ridge, or mountain where the slope of the land rises on one side and descends on the opposite side (level)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Natural_Bend'>
+  <rdfs:label xml:lang="en">Bend</rdfs:label>
+  <rdfs:comment xml:lang="en">Curve in the course of a stream and (or) the land within the curve; a curve in a linear body of water (bottom, loop, meander)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Bridge'>
+  <rdfs:label xml:lang="en">Bridge</rdfs:label>
+  <rdfs:comment xml:lang="en">Manmade structure carrying a trail, road, or other transportation system across a body of water or depression (causeway, overpass, trestle)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Transport_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Building'>
+  <rdfs:label xml:lang="en">Building</rdfs:label>
+  <rdfs:comment xml:lang="en">A manmade structure with walls and a roof for protection of people and (or) materials, but not including church, hospital, or school</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Manmade_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Canal'>
+  <rdfs:label xml:lang="en">Canal</rdfs:label>
+  <rdfs:comment xml:lang="en">Manmade waterway used by watercraft or for drainage, irrigation, mining, or water power (ditch, lateral)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Cape'>
+  <rdfs:label xml:lang="en">Cape</rdfs:label>
+  <rdfs:comment xml:lang="en">Projection of land extending into a body of water (lea, neck, peninsula, point)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Cave'>
+  <rdfs:label xml:lang="en">Cave</rdfs:label>
+  <rdfs:comment xml:lang="en">Natural underground passageway or chamber, or a hollowed out cavity in the side of a cliff (cavern, grotto)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Cemetery'>
+  <rdfs:label xml:lang="en">Cemetery</rdfs:label>
+  <rdfs:comment xml:lang="en">A place or area for burying the dead (burial, burying ground, grave, memorial garden)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Complex" />
+</owl:Class>
+
+<owl:Class rdf:ID='Channel'>
+  <rdfs:label xml:lang="en">Channel</rdfs:label>
+  <rdfs:comment xml:lang="en">Linear deep part of a body of water through which the main volume of water flows and is frequently used as aroute for watercraft (passage, reach, strait, thoroughfare, throughfare)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Church'>
+  <rdfs:label xml:lang="en">Church</rdfs:label>
+  <rdfs:comment xml:lang="en">Building used for religious worship (chapel, mosque, synagogue, tabernacle, temple)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Building" />
+</owl:Class>
+
+<owl:Class rdf:ID='Civil'>
+  <rdfs:label xml:lang="en">Civil</rdfs:label>
+  <rdfs:comment xml:lang="en">A political division formed for administrative purposes (borough, county, municipio, parish, town, township)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='Cliff'>
+  <rdfs:label xml:lang="en">Cliff</rdfs:label>
+  <rdfs:comment xml:lang="en">Very steep or vertical slope (bluff, crag, head, headland, nose, palisades, precipice, promontory, rim, rimrock)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Crater'>
+  <rdfs:label xml:lang="en">Crater</rdfs:label>
+  <rdfs:comment xml:lang="en">Circular-shaped depression at the summit of a volcanic cone or one on the surface of the land caused by the impact of a meteorite; a manmade depression caused by an explosion (caldera, lua)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Crossing'>
+  <rdfs:label xml:lang="en">Crossing</rdfs:label>
+  <rdfs:comment xml:lang="en">A place where two or more routes of transportation form a junction or intersection (overpass, underpass)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Transport_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Dam'>
+  <rdfs:label xml:lang="en">Dam</rdfs:label>
+  <rdfs:comment xml:lang="en">Water barrier or embankment built across the course of a stream or into a body of water to control and (or) impound the flow of water (breakwater, dike, jetty)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Falls'>
+  <rdfs:label xml:lang="en">Falls</rdfs:label>
+  <rdfs:comment xml:lang="en">Perpendicular or very steep fall of water in the course of a stream (cascade, cataract, waterfall)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Flat'>
+  <rdfs:label xml:lang="en">Flat</rdfs:label>
+  <rdfs:comment xml:lang="en">Relative level area within a region of greater relief (clearing, glade, playa)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Forest'>
+  <rdfs:label xml:lang="en">Forest</rdfs:label>
+  <rdfs:comment xml:lang="en">Bounded area of woods, forest, or grassland under the administration of a political agency (see woods) (national forest, national grasslands, State forest)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Gap'>
+  <rdfs:label xml:lang="en">Gap</rdfs:label>
+  <rdfs:comment xml:lang="en">Low point or opening between hills or mountains or in a ridge or mountain range (col, notch, pass, saddle, water gap, wind gap)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Geyser'>
+  <rdfs:label xml:lang="en">Geyser</rdfs:label>
+  <rdfs:comment xml:lang="en">Eruptive spring from which hot water and (or) steam and in some cases mud are periodically thrown</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Glacier'>
+  <rdfs:label xml:lang="en">Glacier</rdfs:label>
+  <rdfs:comment xml:lang="en">Body or stream of ice moving outward and downslope from an area of accumulation; an area of relatively permanent snow or ice on the top or side of a mountain or mountainous area (icefield, ice patch, snow patch)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Natural_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Gut'>
+  <rdfs:label xml:lang="en">Gut</rdfs:label>
+  <rdfs:comment xml:lang="en">Relatively small coastal waterway connecting larger bodies of water or other waterways (creek, inlet, slough)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Harbor'>
+  <rdfs:label xml:lang="en">Harbor</rdfs:label>
+  <rdfs:comment xml:lang="en">Sheltered area of water where ships or other watercraft can anchor or dock (hono, port, roads, roadstead)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Hospital'>
+  <rdfs:label xml:lang="en">Hospital</rdfs:label>
+  <rdfs:comment xml:lang="en">Building where the sick or injured may receive medical or surgical attention (infirmary)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Building" />
+</owl:Class>
+
+<owl:Class rdf:ID='Island'>
+  <rdfs:label xml:lang="en">Island</rdfs:label>
+  <rdfs:comment xml:lang="en">Area of dry or relatively dry land surrounded by water or low wetland (archipelago, atoll, cay, hammock, hummock, isla, isle, key, moku, rock)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Isthmus'>
+  <rdfs:label xml:lang="en">Isthmus</rdfs:label>
+  <rdfs:comment xml:lang="en">Narrow section of land in a body of water connecting two larger land areas</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Lake'>
+  <rdfs:label xml:lang="en">Lake</rdfs:label>
+  <rdfs:comment xml:lang="en">Natural body of inland water (backwater, lac, lagoon, laguna, pond, pool, resaca, waterhole)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Lava'>
+  <rdfs:label xml:lang="en">Lava</rdfs:label>
+  <rdfs:comment xml:lang="en">Formations resulting from the consolidation of molten rock on the surface of the Earth (kepula, lava flow)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Levee'>
+  <rdfs:label xml:lang="en">Levee</rdfs:label>
+  <rdfs:comment xml:lang="en">Natural or manmade embankment flanking a stream (bank, berm)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+
+<owl:Class rdf:ID='Mine'>
+  <rdfs:label xml:lang="en">Mine</rdfs:label>
+  <rdfs:comment xml:lang="en">Place or area from which commercial minerals are or were removed from the Earth; not including oilfield (pit, quarry, shaft)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Extraction_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Oilfield'>
+  <rdfs:label xml:lang="en">Oilfield</rdfs:label>
+  <rdfs:comment xml:lang="en">Area where petroleum is or was removed from the Earth</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Extraction_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Landmark'>
+  <rdfs:label xml:lang="en">Landmark</rdfs:label>
+  <rdfs:comment xml:lang="en">Category miscellaneous named manmade entities, like monuments, statues, carvings...that cannot readily be placed in the other feature classes listed here</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Manmade_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Park'>
+  <rdfs:label xml:lang="en">Park</rdfs:label>
+  <rdfs:comment xml:lang="en">Place or area set aside for recreation or preservation of a cultural or natural resource and under some form of government administration; not including National or State forests or Reserves (national historical landmark, national park, State park, wilderness area)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Recreation_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Natural_Pillar'>
+  <rdfs:label xml:lang="en">Pillar</rdfs:label>
+  <rdfs:comment xml:lang="en">Vertical, standing, often spire-shaped, natural rock formation (chimney, monument, pinnacle, pohaku, rock tower)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Plain'>
+  <rdfs:label xml:lang="en">Plain</rdfs:label>
+  <rdfs:comment xml:lang="en">A region of general uniform slope, comparatively level and of considerable extent (grassland, highland, kula, plateau, upland)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Range'>
+  <rdfs:label xml:lang="en">Range</rdfs:label>
+  <rdfs:comment xml:lang="en">Chain of hills or mountains; a somewhat linear, complex mountainous or hilly area (cordillera, sierra)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Rapids'>
+  <rdfs:label xml:lang="en">Rapids</rdfs:label>
+  <rdfs:comment xml:lang="en">Fast-flowing section of a stream, often shallow and with exposed rock or boulders (riffle, ripple)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Reserve'>
+  <rdfs:label xml:lang="en">Reserve</rdfs:label>
+  <rdfs:comment xml:lang="en">A tract of land set aside for a specific use (does not include forests, civil divisions, parks)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Recreation_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Reservoir'>
+  <rdfs:label xml:lang="en">Reservoir</rdfs:label>
+  <rdfs:comment xml:lang="en">Artificially impounded body of water (lake, tank)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Ridge'>
+  <rdfs:label xml:lang="en">Ridge</rdfs:label>
+  <rdfs:comment xml:lang="en">Elevation with a narrow, elongated crest which can be part of a hill or mountain (crest, cuesta, escarpment, hogback, lae, rim, spur)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='School'>
+  <rdfs:label xml:lang="en">School</rdfs:label>
+  <rdfs:comment xml:lang="en">Building or group of buildings used as an institution for study, teaching, and learning (academy, college, high school, university)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Building" />
+</owl:Class>
+
+<owl:Class rdf:ID='Sea'>
+  <rdfs:label xml:lang="en">Sea</rdfs:label>
+  <rdfs:comment xml:lang="en">Large body of salt water (gulf, ocean)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Slope'>
+  <rdfs:label xml:lang="en">Slope</rdfs:label>
+  <rdfs:comment xml:lang="en">A gently inclined part of the Earth's surface (grade, pitch)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Spring'>
+  <rdfs:label xml:lang="en">Spring</rdfs:label>
+  <rdfs:comment xml:lang="en">Place where underground water flows naturally to the surface of the Earth (seep)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Stream'>
+  <rdfs:label xml:lang="en">Stream</rdfs:label>
+  <rdfs:comment xml:lang="en">Linear body of water flowing on the Earth's surface (anabranch, awawa, bayou, branch, brook, creek, distributary, fork, kill, pup, rio, river, run, slough)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Summit'>
+  <rdfs:label xml:lang="en">Summit</rdfs:label>
+  <rdfs:comment xml:lang="en">Prominent elevation rising above the surrounding level of the Earth's surface; does not include pillars, ridges, or ranges (ahu, berg, bald, butte, cerro, colina, cone, cumbre, dome, head, hill, horn, knob, knoll, mauna, mesa, mesita, mound, mount, mountain, peak, puu, rock, sugarloaf, table, volcano)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Swamp'>
+  <rdfs:label xml:lang="en">Swamp</rdfs:label>
+  <rdfs:comment xml:lang="en">Poorly drained wetland, fresh or saltwater, wooded or grassy, possibly covered with open water (bog, cienega, marais, marsh, pocosin)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Trail'>
+  <rdfs:label xml:lang="en">Trail</rdfs:label>
+  <rdfs:comment xml:lang="en">Route for passage from one point to another; does not include roads or highways (jeep trail, path, ski trail)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Recreation_Feature" />
+</owl:Class>
+ 
+<owl:Class rdf:ID='Tower'>
+  <rdfs:label xml:lang="en">Tower</rdfs:label>
+  <rdfs:comment xml:lang="en">A manmade structure, higher than its diameter, generally used for observation, storage, or electronic transmission</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Building" />
+</owl:Class>
+
+<owl:Class rdf:ID='Tunnel'>
+  <rdfs:label xml:lang="en">Tunnel</rdfs:label>
+  <rdfs:comment xml:lang="en">Linear underground passageway open at both ends</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Transport_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Valley'>
+  <rdfs:label xml:lang="en">Valley</rdfs:label>
+  <rdfs:comment xml:lang="en">Linear depression in the Earth's surface that generally slopes from one end to the other (barranca, canyon, chasm, cove, draw, glen, gorge, gulch, gulf, hollow, ravine)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+<owl:Class rdf:ID='Well'>
+  <rdfs:label xml:lang="en">Well</rdfs:label>
+  <rdfs:comment xml:lang="en">Manmade shaft or hole in the Earth's surface used to obtain fluid or gaseous materials</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Water_Structure" />
+</owl:Class>
+
+<owl:Class rdf:ID='Woods'>
+  <rdfs:label xml:lang="en">Woods</rdfs:label>
+  <rdfs:comment xml:lang="en">Small area covered with a dense growth of trees; does not include an area of trees under the administration of a political agency (see forest)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Land_Feature" />
+</owl:Class>
+
+
+
+
+<!-- ************ PROPERTIES ************ -->
+
+<owl:DatatypeProperty rdf:ID="synonym">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:label xml:lang="en">synonym</rdfs:label>
+  <rdfs:comment xml:lang="en">Alias, aka, examples: Aleman, Boanerges Aleman, Aleman-Meza, B. Aleman</rdfs:comment>
+</owl:DatatypeProperty>
+
+
+<owl:ObjectProperty rdf:ID="lives_in">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="#Place"/>
+  <rdfs:label xml:lang="en">lives in</rdfs:label>
+  <rdfs:comment xml:lang="en">Relates a person to a place in which that person lives</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="affiliated_with">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="#Organization"/>
+  <rdfs:label xml:lang="en">affiliated with</rdfs:label>
+  <rdfs:comment xml:lang="en">Relates a person to an organization to which that person is affiliated  with</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="member_of">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="#Organization"/>
+  <rdfs:label xml:lang="en">affiliated with</rdfs:label>
+  <rdfs:comment xml:lang="en">Relates a person to an organization to which that person is member of</rdfs:comment>
+  <rdfs:subPropertyOf rdf:resource="#affiliated_with"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="leader_of">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="#Organization"/>
+  <rdfs:label xml:lang="en">affiliated with</rdfs:label>
+  <rdfs:comment xml:lang="en">Relates a person to an organization to which that person is leader of</rdfs:comment>
+  <rdfs:subPropertyOf rdf:resource="#member_of"/>
+</owl:ObjectProperty>
+
+
+
+<owl:ObjectProperty rdf:ID="has_citizenship_in">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="#Country"/>
+  <rdfs:label xml:lang="en">has citizenship in</rdfs:label>
+  <rdfs:comment xml:lang="en">Connects a person to a country by its citizenship, examples: Bill Clinton  has_citizenship_in USA</rdfs:comment>
+</owl:ObjectProperty>
+
+
+
+<owl:ObjectProperty rdf:ID="published_in">
+  <rdfs:domain rdf:resource="#Publication"/>
+  <rdfs:range rdf:resource="#Publication"/>
+  <rdfs:label xml:lang="en">published in</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:ObjectProperty>
+
+
+<owl:ObjectProperty rdf:ID="listed_author_in">
+  <rdfs:domain rdf:resource="#Researcher"/>
+  <rdfs:range rdf:resource="#Publication"/>
+  <rdfs:label xml:lang="en">listed author in</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:ObjectProperty>
+
+
+
+
+
+<owl:ObjectProperty rdf:ID="faculty_member_at">
+  <rdfs:domain rdf:resource="#Professor"/>
+  <rdfs:range rdf:resource="#Academic_Department"/>
+  <rdfs:label xml:lang="en">faculty member at</rdfs:label>
+  <rdfs:comment xml:lang="en">a professor is a faculty member at an academic department</rdfs:comment>
+</owl:ObjectProperty>
+
+
+
+<owl:ObjectProperty rdf:ID="has_academic_department">
+  <rdfs:domain rdf:resource="#University"/>
+  <rdfs:range rdf:resource="#Academic_Department"/>
+  <rdfs:label xml:lang="en">has academic department</rdfs:label>
+  <rdfs:comment xml:lang="en">An academic department located in a University</rdfs:comment>
+</owl:ObjectProperty>
+
+
+<owl:ObjectProperty rdf:ID="located_in">
+  <rdfs:domain rdf:resource="#Thing"/>
+  <rdfs:range rdf:resource="#Place"/>
+  <rdfs:label xml:lang="en">located in</rdfs:label>
+  <rdfs:comment xml:lang="en">Connects a place with another place, examples: Athens located_in Georgia, Georgia  located_in USA</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:ID="code">
+  <rdfs:domain rdf:resource="#Airport"/>
+  <rdfs:label xml:lang="en">code</rdfs:label>
+  <rdfs:comment xml:lang="en">Airport code, examples: ATL, CUU, LAX</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:ID="responsible_for">
+  <rdfs:domain rdf:resource="#Organization"/>
+  <rdfs:range rdf:resource="#Event"/>
+  <rdfs:label xml:lang="en">responsible for</rdfs:label>
+  <rdfs:comment xml:lang="en">A connection of an organization with an event, examples: UN responsible_for Peace  Accord</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="occurred_in">
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#Place"/>
+  <rdfs:label xml:lang="en">ocurred in</rdfs:label>
+  <rdfs:comment xml:lang="en">Connects an event to a place in which it happened, examples: 9/11 occured_in  USA</rdfs:comment>
+</owl:ObjectProperty>
+
+
+<owl:ObjectProperty rdf:ID="classified_with">
+  <rdfs:domain rdf:resource="#Scientific_Publication"/>
+  <rdfs:range rdf:resource="#Publication_Classification"/>
+  <rdfs:label xml:lang="en">classified with</rdfs:label>
+  <rdfs:comment xml:lang="en">Relationship from a scientific publication to a publication  classification</rdfs:comment>
+</owl:ObjectProperty>
+
+
+
+
+
+
+
+<owl:DatatypeProperty rdf:ID="publication_keywords">
+  <rdfs:domain rdf:resource="#Scientific_Publication"/>
+  <rdfs:label xml:lang="en">publication keywords</rdfs:label>
+  <rdfs:comment xml:lang="en">Set of keywords of a publication</rdfs:comment>
+</owl:DatatypeProperty>
+
+
+<owl:DatatypeProperty rdf:ID="name">
+<rdfs:label xml:lang="en">name</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="sourceId">
+<rdfs:label xml:lang="en">sourceId</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="extractorId">
+<rdfs:label xml:lang="en">extractorId</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="parentURI">
+<rdfs:label xml:lang="en">parentURI</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="attribute_country">
+<rdfs:domain rdf:resource="#City"/>
+<rdfs:label xml:lang="en">attribute_country</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="airport_code">
+<rdfs:domain rdf:resource="#Airport"/>
+<rdfs:label xml:lang="en">airport_code</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+
+
+<owl:DatatypeProperty rdf:ID="attack_type">
+<rdfs:domain rdf:resource="#Terrorist_Attack"/>
+<rdfs:label xml:lang="en">attack_type</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="injured">
+<rdfs:domain rdf:resource="#Terrorist_Attack"/>
+<rdfs:label xml:lang="en">injured</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="fatalities">
+<rdfs:domain rdf:resource="#Terrorist_Attack"/>
+<rdfs:label xml:lang="en">fatalities</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="target_type">
+<rdfs:domain rdf:resource="#Terrorist_Attack"/>
+<rdfs:label xml:lang="en">target_type</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="location">
+<rdfs:domain rdf:resource="#Terrorist_Attack"/>
+<rdfs:label xml:lang="en">location</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+
+<owl:DatatypeProperty rdf:ID="complexion">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">complexion</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+
+<owl:DatatypeProperty rdf:ID="reward">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">reward</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="caution">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">caution</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="sex">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">sex</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="eye">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">eye</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="hair">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">hair</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="remarks">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">remarks</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="scars_and_marks">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">scars_and_marks</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="languages">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">languages</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="build">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">build</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="weight">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">weight</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="height">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">height</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="place_of_birth">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">place_of_birth</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="date_of_birth_used">
+<rdfs:domain rdf:resource="#Terrorist"/>
+<rdfs:label xml:lang="en">date_of_birth_used</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="address">
+<rdfs:domain rdf:resource="#Financial_Organization"/>
+<rdfs:label xml:lang="en">address</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="bank_type">
+<rdfs:domain rdf:resource="#Financial_Organization"/>
+<rdfs:label xml:lang="en">type of financial organization</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="latitude_longitude">
+<rdfs:domain rdf:resource="#City"/>
+<rdfs:label xml:lang="en">latitude_longitude</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="altitude">
+<rdfs:domain rdf:resource="#City"/>
+<rdfs:label xml:lang="en">altitude</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+
+<owl:DatatypeProperty rdf:ID="No">
+<rdfs:domain rdf:resource="#Publication"/>
+<rdfs:label xml:lang="en">No</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="Year_pulished">
+<rdfs:domain rdf:resource="#Publication"/>
+<rdfs:label xml:lang="en">Year_pulished</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="Volume">
+<rdfs:domain rdf:resource="#Publication"/>
+<rdfs:label xml:lang="en">Volume</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="Download_link">
+<rdfs:domain rdf:resource="#Publication"/>
+<rdfs:label xml:lang="en">Download_link</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="page_numbers">
+<rdfs:domain rdf:resource="#Publication"/>
+<rdfs:label xml:lang="en">page_numbers</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="URL_link">
+<rdfs:domain rdf:resource="#Publication"/>
+<rdfs:label xml:lang="en">URL_link</rdfs:label>
+<rdfs:comment xml:lang="en"></rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="description">
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:label xml:lang="en">description</rdfs:label>
+  <rdfs:comment xml:lang="en">More information about an event, examples: The event will have minor economic impact  in the southern part of the state</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="event_date">
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:label xml:lang="en">event date</rdfs:label>
+  <rdfs:comment xml:lang="en">Date of occurrence of an event, examples: 2001-09-11</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="type_of_event">
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:label xml:lang="en">type of event</rdfs:label>
+  <rdfs:comment xml:lang="en">Type of an event, examples: Suicide, Peace Accord, company bankruptcy</rdfs:comment>
+</owl:DatatypeProperty>
+
+
+
+<owl:DatatypeProperty rdf:ID="extraction_method">
+  <rdfs:label xml:lang="en">extraction method</rdfs:label>
+  <rdfs:comment xml:lang="en">Entities are extracted either in an automated or manual manner </rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="extracted_by_person">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:label xml:lang="en">extracted by person</rdfs:label>
+  <rdfs:comment xml:lang="en">Person who extracted the entity, examples: Gowtham Sannapareddy, Boanerges  Aleman-Meza</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="extraction_tool">
+  <rdfs:label xml:lang="en">extraction tool</rdfs:label>
+  <rdfs:comment xml:lang="en">Tool used for extraction, examples: Semagix Fredom </rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="extraction_date_time">
+  <rdfs:label xml:lang="en">extraction date time</rdfs:label>
+  <rdfs:comment xml:lang="en">Keeps the date and time of extraction, examples: 2003-11-13, 12:00</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="extraction_update_date_time">
+  <rdfs:label xml:lang="en">extraction update date time</rdfs:label>
+  <rdfs:comment xml:lang="en">Keeps the date and time of an updated extraction, examples: 2003-11-13,  12:00</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="curation">
+  <rdfs:label xml:lang="en">curation</rdfs:label>
+  <rdfs:comment xml:lang="en">Examples: yes/no</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="source_location">
+  <rdfs:label xml:lang="en">source location</rdfs:label>
+  <rdfs:comment xml:lang="en">Source location, examples: http://lsdis.cs.uga.edu/about/people.html,  ftp://....</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="owner">
+  <rdfs:label xml:lang="en">owner</rdfs:label>
+  <rdfs:comment xml:lang="en">Owner of the data source, examples: http://www.cia.gov,  http://lsdis.cs.uga.edu/</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="boundary">
+  <rdfs:domain rdf:resource="#Place"/>
+  <rdfs:label xml:lang="en">boundary</rdfs:label>
+  <rdfs:comment xml:lang="en">boundary example: 130330N/59076W,130370N/59096W, 130324N/59140W,130317N/5890W  </rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="bounding_box">
+  <rdfs:domain rdf:resource="#Place"/>
+  <rdfs:label xml:lang="en">bounding box</rdfs:label>
+  <rdfs:comment xml:lang="en">bounding box example: 130330N/59076W,130330N/59096W, 130324N/59096W,130324N/59076W  </rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="geographic_description">
+  <rdfs:domain rdf:resource="#Place"/>
+  <rdfs:label xml:lang="en">geographic description</rdfs:label>
+  <rdfs:comment xml:lang="en">description of the geographic location using identifiers, can include center point  latitude/longitude in seconds by using cp= example:FIPS=059, cp=122220N/300327W </rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="is_manmade">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Natural_Feature"/>
+    <rdfs:label xml:lang="en">is_manmade</rdfs:label>
+    <rdfs:comment>indicates whether a feature is manmade or natural.</rdfs:comment>
+  </owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="elevation">
+    <rdfs:domain rdf:resource="#Place"/>
+    <rdfs:domain rdf:resource="#Thing"/>
+    <rdfs:label xml:lang="en">elevation</rdfs:label>
+    <rdfs:comment>hieght of a feature above sealevel, in feet</rdfs:comment>
+  </owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="est_population">
+    <rdfs:domain rdf:resource="#Place"/>
+    <rdfs:label xml:lang="en">est_population</rdfs:label>
+    <rdfs:comment>number of people living in an area</rdfs:comment>
+  </owl:DatatypeProperty>
+  
+  <owl:DatatypeProperty rdf:ID="topo_map">
+      <rdfs:domain rdf:resource="#Place"/>
+      <rdfs:domain rdf:resource="#Thing"/>
+      <rdfs:label xml:lang="en">topo_map</rdfs:label>
+      <rdfs:comment>the name of the USGS topomap on which the feature can be found</rdfs:comment>
+  </owl:DatatypeProperty>
+
+</rdf:RDF>

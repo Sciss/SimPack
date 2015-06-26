@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2000/10/XMLSchema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://lsdis.cs.uga.edu/proj/semdis/testbed/#" 
+    xml:base="http://lsdis.cs.uga.edu/proj/semdis/testbed/">
+
+<owl:Ontology rdf:about="">
+  <owl:versionInfo>testbed.owl, v 1.4 2004/04/26</owl:versionInfo>
+  <rdfs:comment>SWETO Ontology v1.4</rdfs:comment>
+  <rdfs:label>SWETO Ontology</rdfs:label>
+</owl:Ontology>
+
+<!-- ************ CLASSES ************ -->
+
+<owl:Class rdf:ID='Place'>
+  <rdfs:label xml:lang="en">Place</rdfs:label>
+  <rdfs:comment xml:lang="en">Typically, entities of type Place include continents, regions, countries, states,  cities</rdfs:comment>
+     <rdfs:subClassOf>
+      <owl:Class rdf:ID="SWETORoot" >
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+      </owl:Class>
+    </rdfs:subClassOf> 
+</owl:Class>
+
+<owl:Class rdf:ID='Person'>
+  <rdfs:label xml:lang="en">Person</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of person</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SWETORoot" >
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+      </owl:Class>
+    </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:ID='Politician'>
+  <rdfs:label xml:lang="en">Politician</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Person" />
+</owl:Class>
+
+<owl:Class rdf:ID='Terrorist'>
+  <rdfs:label xml:lang="en">Terrorist</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Person" />
+</owl:Class>
+
+<owl:Class rdf:ID='Researcher'>
+  <rdfs:label xml:lang="en">Researcher</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a researcher person</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Person" />
+</owl:Class>
+
+<owl:Class rdf:ID='Computer_Science_Researcher'>
+  <rdfs:label xml:lang="en">Computer Science Researcher</rdfs:label>
+  <rdfs:comment xml:lang="en"></rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Researcher" />
+</owl:Class>
+
+<owl:Class rdf:ID='Professor'>
+  <rdfs:label xml:lang="en">Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a professor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Person" />
+</owl:Class>
+
+<owl:Class rdf:ID='Computer_Science_Professor'>
+  <rdfs:label xml:lang="en">Computer Science Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a computer science  professor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Professor" />
+</owl:Class>
+
+<owl:Class rdf:ID='Mathematics_Professor'>
+  <rdfs:label xml:lang="en">Mathematics Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a mathematics  professor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Professor" />
+</owl:Class>
+
+<owl:Class rdf:ID='Statistics_Professor'>
+  <rdfs:label xml:lang="en">Statistics Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a statistics professor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Professor" />
+</owl:Class>
+
+<owl:Class rdf:ID='Engineering_Professor'>
+  <rdfs:label xml:lang="en">Engineering Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of an  engineeringprofessor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Professor" />
+</owl:Class>
+
+<owl:Class rdf:ID='Physics_Professor'>
+  <rdfs:label xml:lang="en">Physics Professor</rdfs:label>
+  <rdfs:comment xml:lang="en">This includes different types/specializations of a physicsprofessor</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Professor" />
+</owl:Class>
+
+<owl:Class rdf:ID='Country'>
+  <rdfs:label xml:lang="en">Country</rdfs:label>
+  <rdfs:comment xml:lang="en">Countries in the world, examples: Mexico, Austria, India</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='Region'>
+  <rdfs:label xml:lang="en">Region</rdfs:label>
+  <rdfs:comment xml:lang="en">Regions in the world, examples: North America, Central America, South  America</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='City'>
+  <rdfs:label xml:lang="en">City</rdfs:label>
+  <rdfs:comment xml:lang="en">Cities in the world, examples: Athens, Atlanta, Chihuahua, New York</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='State'>
+  <rdfs:label xml:lang="en">State</rdfs:label>
+  <rdfs:comment xml:lang="en">States or Provinces of countries, examples: Georgia, Alaska, Alberta</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='County'>
+  <rdfs:label xml:lang="en">County</rdfs:label>
+  <rdfs:comment xml:lang="en">A County or parish of a state or province. Counties of Georgia (USA), examples: Fulton, Cobb, Hall, Clarke</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+<owl:Class rdf:ID='Locale'>
+  <rdfs:label xml:lang="en">Locale</rdfs:label>
+  <rdfs:comment xml:lang="en">Place at which there is or was human activity; it does not include populated places, mines, and dams (battlefield, crossroad, camp, farm, ghost town, landing, railroad siding, ranch, ruins, site, station, windmill)</rdfs:comment>
+  <rdfs:subClassOf rdf:resource="#Place" />
+</owl:Class>
+
+</rdf:RDF>

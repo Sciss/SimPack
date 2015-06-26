@@ -1,0 +1,1080 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:com="http://www.domain2.com#"
+    xmlns:um="http://www.userModel/owl#"
+    xmlns="http://www.area/owl#"
+    xmlns:cas="http://www.casualty/owl#"
+    xmlns:chem="http://www.chemistry/owl#"
+    xmlns:unit="http://www.unit/owl#"
+    xmlns:semco="http://www.semco/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:sim="http://www.simulation/owl#"
+    xmlns:knw="http://www.knowledge/owl#"
+    xmlns:rel="http://www.release/owl#"
+    xmlns:area="http://www.area/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:meteo="http://www.meteo/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://www.area/owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:about="http://www.semco/owl#AdultCareCenter">
+    <rdfs:comment xml:lang="sk">Ambulancia pre dospelych.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semco/owl#CareCenter"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#PoliceDepartment">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semco/owl#Organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#Organization">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semco/owl#SemcoRoot"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#MaximalWindSpeedLevel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#Level"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#LargeScalePrecipitation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#Precipitation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#RelativeHumidity">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Relative humidity</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#MeteorologicalData"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#Region">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#AboveSurfaceLevel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#Level"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#Longitude">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.domain2.com#PointRelatedQuantity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.simulation/owl#SimulationState">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#Station">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#SolarRadiation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#MeteorologicalData"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#Area">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Describes an geografical area</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.casualty/owl#Release">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.casualty/owl#Casualty"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#AirCraft">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semco/owl#Vehicle"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#SeaLevel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#Level"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.unit/owl#PhysicalUnit">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.unit/owl#Unit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#Temperature">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#MeteorologicalData"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Temperature</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#County">
+    <rdfs:subClassOf rdf:resource="http://www.area/owl#District"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#GeopotentialHight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#MeteorologicalData"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.knowledge/owl#File">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.knowledge/owl#Resource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.knowledge/owl#WebResource">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.knowledge/owl#Resource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#WindUComponent">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Value of the U component of the wind speed</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#MeteorologicalData"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#ContactInformation">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#MeteorologicalData">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.domain2.com#PointRelatedQuantity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#TrainStation">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#Station"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#SemcoApplicationUserID">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#ContactInformation"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.simulation/owl#MeteoSimulation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.simulation/owl#Simulation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#District">
+    <rdfs:subClassOf rdf:resource="http://www.area/owl#Region"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#StomatologyCareCenter">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semco/owl#CareCenter"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#ConvectivePrecipitation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#Precipitation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#GroundAirPressureLog">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#AirPressure">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#GRIDArea">
+    <rdfs:subClassOf rdf:resource="http://www.area/owl#Area"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#GeographicalDegree">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.unit/owl#Unit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#AbsoluteVorticity">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#Point">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.knowledge/owl#Picture">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.knowledge/owl#Resource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#DewPointTemperature">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#NorthSouthSampling">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.area/owl#Sampling"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.knowledge/owl#Knowledge">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#GroundShining">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#TotalPrecipitation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#Precipitation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#ChildrenCareCenter">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semco/owl#CareCenter"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#GroundHeatFlow">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#FiremenDepartment">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#Organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#GynaecologyCareCenter">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semco/owl#CareCenter"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#People">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.knowledge/owl#Text">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.knowledge/owl#Resource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#CareCenter">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#Organization"/>
+    <rdfs:comment xml:lang="sk">Ambulancia.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#Tropopause">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#Level"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.casualty/owl#Casualty">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#Address">
+    <rdfs:comment xml:lang="sk">Adresa.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#ContactInformation"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#Sampling">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.domain2.com#Quantity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.domain2.com#Quantity">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#PetrolStation">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#Organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#IsobaricLevel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.meteo/owl#Level"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#Village">
+    <rdfs:subClassOf rdf:resource="http://www.area/owl#County"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#Wind10mUComponent">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.knowledge/owl#URI">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#EastWestSampling">
+    <rdfs:subClassOf rdf:resource="http://www.area/owl#Sampling"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.simulation/owl#Simulation">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#Car">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semco/owl#Vehicle"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#CloudyWeather">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#Humidity">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#SensibleHeatFlux">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#Precipitation">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#Vehicle">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.chemistry/owl#Specie">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#Town">
+    <rdfs:subClassOf rdf:resource="http://www.area/owl#County"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#BusStation">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#Station"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.knowledge/owl#Resource">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#Landuse">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <area:Landuse rdf:about="http://www.area/owl#Coniferous_and_mixed_forest"/>
+          <area:Landuse rdf:about="http://www.area/owl#Inland_water"/>
+          <area:Landuse rdf:about="http://www.area/owl#Ocean"/>
+          <area:Landuse rdf:about="http://www.area/owl#Arable_land"/>
+          <area:Landuse rdf:about="http://www.area/owl#Grassland_for_agricultural_use"/>
+          <area:Landuse rdf:about="http://www.area/owl#Other"/>
+          <area:Landuse rdf:about="http://www.area/owl#Deciduous_forest"/>
+          <area:Landuse rdf:about="http://www.area/owl#Permanent_crops"/>
+          <area:Landuse rdf:about="http://www.area/owl#Urban_areas"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.unit/owl#Unit">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.casualty/owl#Amount">
+    <rdfs:subClassOf rdf:resource="http://www.domain2.com#Quantity"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.casualty/owl#Concentration">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.domain2.com#PointRelatedQuantity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#SnowDepth">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#Airport">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#Station"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#VerticalVelocity">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#User">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#Latitude">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.domain2.com#PointRelatedQuantity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#Altitude">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.domain2.com#PointRelatedQuantity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.casualty/owl#InputRation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.domain2.com#PointRelatedQuantity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.area/owl#City">
+    <rdfs:subClassOf rdf:resource="http://www.area/owl#County"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#Bus">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#Vehicle"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#WindVComponent">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Value of the V component of the wind speed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.casualty/owl#Ration">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.domain2.com#PointRelatedQuantity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.knowledge/owl#URL">
+    <rdfs:subClassOf rdf:resource="http://www.knowledge/owl#URI"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#Level">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#SemcoRoot"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#Company">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#Organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#Train">
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#Vehicle"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.meteo/owl#Wind10mVComponent">
+    <rdfs:subClassOf rdf:resource="http://www.meteo/owl#MeteorologicalData"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.domain2.com#PointRelatedQuantity">
+    <rdfs:subClassOf rdf:resource="http://www.domain2.com#Quantity"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.simulation/owl#MeteoSimulationState">
+    <rdfs:subClassOf rdf:resource="http://www.simulation/owl#SimulationState"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semco/owl#Pharmacy">
+    <rdfs:comment xml:lang="sk">Lekaren.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semco/owl#Organization"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.area/owl#knownQuantity">
+    <rdfs:domain rdf:resource="http://www.area/owl#Point"/>
+    <rdfs:range rdf:resource="http://www.domain2.com#PointRelatedQuantity"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.simulation/owl#hasMeteoSimulationState">
+    <rdfs:domain rdf:resource="http://www.simulation/owl#MeteoSimulation"/>
+    <rdfs:range rdf:resource="http://www.simulation/owl#MeteoSimulationState"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.simulation/owl#hasSimulationState"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.knowledge/owl#hasResource">
+    <rdfs:range rdf:resource="http://www.knowledge/owl#Resource"/>
+    <rdfs:domain rdf:resource="http://www.knowledge/owl#Knowledge"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="releasedAmount">
+    <rdfs:range rdf:resource="http://www.casualty/owl#Amount"/>
+    <rdfs:domain rdf:resource="http://www.casualty/owl#Release"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.area/owl#isInArea">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.area/owl#hasSurfacePoints"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.area/owl#Area"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#Point"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.knowledge/owl#hasKnowledge">
+    <rdfs:range rdf:resource="http://www.knowledge/owl#Knowledge"/>
+    <rdfs:domain rdf:resource="http://www.semco/owl#User"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.knowledge/owl#uri">
+    <rdfs:domain rdf:resource="http://www.knowledge/owl#Resource"/>
+    <rdfs:range rdf:resource="http://www.knowledge/owl#URI"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.area/owl#hasEastWestSampling">
+    <rdfs:domain rdf:resource="http://www.area/owl#GRIDArea"/>
+    <rdfs:range rdf:resource="http://www.area/owl#EastWestSampling"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semco/owl#hasContactInformation">
+    <rdfs:range rdf:resource="http://www.semco/owl#ContactInformation"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.semco/owl#User"/>
+          <owl:Class rdf:about="http://www.semco/owl#Station"/>
+          <owl:Class rdf:about="http://www.semco/owl#Organization"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.knowledge/owl#isRelatedTo">
+    <rdfs:domain rdf:resource="http://www.knowledge/owl#Knowledge"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.area/owl#isPointOfLevel">
+    <rdfs:range rdf:resource="http://www.meteo/owl#Level"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#Point"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.area/owl#hasLevelPoints"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.area/owl#ReleaseArea">
+    <rdfs:range rdf:resource="http://www.area/owl#Area"/>
+    <rdfs:domain rdf:resource="http://www.casualty/owl#Release"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.area/owl#hasSurfacePoints">
+    <rdfs:range rdf:resource="http://www.area/owl#Point"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#Area"/>
+    <owl:inverseOf rdf:resource="http://www.area/owl#isInArea"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.area/owl#hasNorthSouthSampling">
+    <rdfs:domain rdf:resource="http://www.area/owl#GRIDArea"/>
+    <rdfs:range rdf:resource="http://www.area/owl#NorthSouthSampling"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.casualty/owl#releasedSpecie">
+    <rdfs:domain rdf:resource="http://www.casualty/owl#Release"/>
+    <rdfs:range rdf:resource="http://www.chemistry/owl#Specie"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.simulation/owl#hasSimulationArea">
+    <rdfs:range rdf:resource="http://www.area/owl#Area"/>
+    <rdfs:domain rdf:resource="http://www.simulation/owl#MeteoSimulation"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.area/owl#ReleaseArea"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.area/owl#overlapsWithArea">
+    <rdfs:range rdf:resource="http://www.area/owl#Area"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#Area"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.area/owl#hasLevelPoints">
+    <owl:inverseOf rdf:resource="http://www.area/owl#isPointOfLevel"/>
+    <rdfs:domain rdf:resource="http://www.meteo/owl#Level"/>
+    <rdfs:range rdf:resource="http://www.area/owl#Point"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.simulation/owl#hasSimulationState">
+    <rdfs:range rdf:resource="http://www.simulation/owl#SimulationState"/>
+    <rdfs:domain rdf:resource="http://www.simulation/owl#Simulation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.simulation/owl#inPoint">
+    <rdfs:domain rdf:resource="http://www.simulation/owl#MeteoSimulationState"/>
+    <rdfs:range rdf:resource="http://www.area/owl#Point"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.knowledge/owl#hasLevel">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Uroven znalosti. Cislo od 0 (ziadna znalost) po 1 (uplna znalost).</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://www.knowledge/owl#Knowledge"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.area/owl#text">
+    <rdfs:domain rdf:resource="http://www.area/owl#Address"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Uplna adresa v textovej podobe.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.area/owl#inhabitantsCount">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pocet obyvatelov.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.simulation/owl#inTime">
+    <rdfs:domain rdf:resource="http://www.simulation/owl#SimulationState"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:about="http://www.area/owl#hasSubArea">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.area/owl#Area"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#Area"/>
+  </owl:TransitiveProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#particleDensity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#NROWS">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Number of horizontal points</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.area/owl#GRIDArea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.knowledge/owl#string">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.knowledge/owl#URI"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasResidentialDensity">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment xml:lang="sk">Hustota obyvateľstva.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.unit/owl#isSIUnit">
+    <rdfs:domain rdf:resource="http://www.unit/owl#PhysicalUnit"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.simulation/owl#simulatesTermTo">
+    <rdfs:domain rdf:resource="http://www.simulation/owl#Simulation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#henryConstant">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#minute">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#GeographicalDegree"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.simulation/owl#SimulationStart">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.simulation/owl#Simulation"/>
+          <owl:Class rdf:about="http://www.casualty/owl#Casualty"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Time when the simulation started</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasLatitude">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.area/owl#Latitude"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#Point"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.simulation/owl#OutputTimeStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Output time step in mili seconds</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.simulation/owl#MeteoSimulation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.simulation/owl#simulatesTermFrom">
+    <rdfs:domain rdf:resource="http://www.simulation/owl#Simulation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#particleMeanDiameter">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.semco/owl#value">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semco/owl#SemcoApplicationUserID"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#isInUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.unit/owl#Unit"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.area/owl#Altitude"/>
+          <owl:Class rdf:about="http://www.domain2.com#Quantity"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.domain2.com#hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.area/owl#Area"/>
+          <owl:Class rdf:about="http://www.unit/owl#Unit"/>
+          <owl:Class rdf:about="http://www.domain2.com#Quantity"/>
+          <owl:Class rdf:about="http://www.area/owl#Region"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasLeftBottomCorner">
+    <rdfs:range rdf:resource="http://www.area/owl#Point"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#Area"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#NCOLS">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Number of vertical points</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.area/owl#GRIDArea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#diffusivity">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#degree">
+    <rdfs:domain rdf:resource="http://www.area/owl#GeographicalDegree"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#verticalIncrement">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#wetExponential">
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasHouseCount">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment xml:lang="sk">Počet domov.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.area/owl#Region"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasAltitude">
+    <rdfs:range rdf:resource="http://www.area/owl#Altitude"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.area/owl#Point"/>
+          <owl:Class rdf:about="http://www.area/owl#City"/>
+          <owl:Class rdf:about="http://www.area/owl#Town"/>
+          <owl:Class rdf:about="http://www.area/owl#Village"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.unit/owl#symbol">
+    <rdfs:domain rdf:resource="http://www.unit/owl#PhysicalUnit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasZIPCode">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.area/owl#City"/>
+          <owl:Class rdf:about="http://www.area/owl#Town"/>
+          <owl:Class rdf:about="http://www.area/owl#Village"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="sk">PSC.</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#halfLife">
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#isotopeIndex">
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#isotope">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.simulation/owl#OutputSamplingRate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://www.simulation/owl#MeteoSimulation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.simulation/owl#OutputTimeAverage">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Output time average</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.simulation/owl#MeteoSimulation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasLanduse">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#Point"/>
+    <rdfs:range rdf:resource="http://www.area/owl#Landuse"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#lowerAltitudeBorder">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.area/owl#Altitude"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#Area"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasOccupiedHouseCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment xml:lang="sk">Pocet obyvanych domov.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.area/owl#Region"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#Name">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ID of the substance - name of the isotope or the chemical</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#particleDiameterDeviation">
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasRightUpperCorner">
+    <rdfs:domain rdf:resource="http://www.area/owl#Area"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.area/owl#Point"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.area/owl#Altitude"/>
+          <owl:Class rdf:about="http://www.domain2.com#Quantity"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasAddress">
+    <rdfs:range rdf:resource="http://www.area/owl#Address"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.meteo/owl#hasPressure">
+    <rdfs:domain rdf:resource="http://www.meteo/owl#IsobaricLevel"/>
+    <rdfs:range rdf:resource="http://www.meteo/owl#AirPressure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasLongitude">
+    <rdfs:domain rdf:resource="http://www.area/owl#Point"/>
+    <rdfs:range rdf:resource="http://www.area/owl#Longitude"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#reactivity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasAreaCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="sk">Smerove cislo.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#County"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#wetLinear">
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.simulation/owl#SimulationEnd">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Time when the simulation finished.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.simulation/owl#Simulation"/>
+          <owl:Class rdf:about="http://www.casualty/owl#Casualty"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.semco/owl#semcoApplicationID">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ID (login) v systeme semco-ws.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#upperAltitudeBorder">
+    <rdfs:range rdf:resource="http://www.area/owl#Altitude"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#Area"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.chemistry/owl#dryDepositionVelocity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="http://www.chemistry/owl#Specie"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#hasSurfaceArea">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.area/owl#Region"/>
+    <rdfs:comment xml:lang="sk">Rozloha.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.area/owl#horizontalIncrement">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://www.area/owl#correspondsTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.area/owl#Area"/>
+          <owl:Class rdf:about="http://www.area/owl#Region"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.area/owl#Area"/>
+          <owl:Class rdf:about="http://www.area/owl#Region"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:comment xml:lang="sk">Vztah medzi oblastou opisanou pomocou dvoch bodov so suradnicami a regionom (v zmysle miest, obci).</rdfs:comment>
+  </owl:InverseFunctionalProperty>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#nanoGramPerCubicMeter">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ng/m3</unit:symbol>
+  </unit:PhysicalUnit>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel250hPa">
+    <meteo:hasPressure>
+      <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure250hPa">
+        <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >250.0</area:hasValue>
+      </meteo:AirPressure>
+    </meteo:hasPressure>
+  </meteo:IsobaricLevel>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#kelvin">
+    <unit:isSIUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</unit:isSIUnit>
+    <com:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >kelvin</com:hasName>
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >k</unit:symbol>
+  </unit:PhysicalUnit>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel500hPa">
+    <meteo:hasPressure>
+      <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure500hPa">
+        <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >500.0</area:hasValue>
+      </meteo:AirPressure>
+    </meteo:hasPressure>
+  </meteo:IsobaricLevel>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#kilogram">
+    <unit:isSIUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</unit:isSIUnit>
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >kg</unit:symbol>
+    <com:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >kilogram</com:hasName>
+  </unit:PhysicalUnit>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#meterPerSecond">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >m/s</unit:symbol>
+  </unit:PhysicalUnit>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#becquerel">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bq</unit:symbol>
+    <com:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >becquerel</com:hasName>
+    <unit:isSIUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</unit:isSIUnit>
+  </unit:PhysicalUnit>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#mmPerhectare">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mm/h</unit:symbol>
+  </unit:PhysicalUnit>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#sievertPerHour">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sv/h</unit:symbol>
+  </unit:PhysicalUnit>
+  <meteo:AboveSurfaceLevel rdf:about="http://www.meteo/owl#TwoMetersAboveSurface"/>
+  <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure100hPa">
+    <area:isInUnit>
+      <unit:PhysicalUnit rdf:about="http://www.unit/owl#hectopascal">
+        <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >hPa</unit:symbol>
+      </unit:PhysicalUnit>
+    </area:isInUnit>
+    <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >100.0</area:hasValue>
+  </meteo:AirPressure>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel100hPa">
+    <meteo:hasPressure rdf:resource="http://www.meteo/owl#pressure100hPa"/>
+  </meteo:IsobaricLevel>
+  <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure300hPa">
+    <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >300.0</area:hasValue>
+  </meteo:AirPressure>
+  <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure1000hPa">
+    <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >1000.0</area:hasValue>
+  </meteo:AirPressure>
+  <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure700hPa">
+    <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >700.0</area:hasValue>
+  </meteo:AirPressure>
+  <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure400hPa">
+    <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >400.0</area:hasValue>
+  </meteo:AirPressure>
+  <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure70hPa">
+    <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >70.0</area:hasValue>
+    <area:isInUnit rdf:resource="http://www.unit/owl#hectopascal"/>
+  </meteo:AirPressure>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel400hPa">
+    <meteo:hasPressure rdf:resource="http://www.meteo/owl#pressure400hPa"/>
+  </meteo:IsobaricLevel>
+  <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure850hPa">
+    <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >850.0</area:hasValue>
+  </meteo:AirPressure>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel300hPa">
+    <meteo:hasPressure rdf:resource="http://www.meteo/owl#pressure300hPa"/>
+  </meteo:IsobaricLevel>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#nanoGramPerSquareMeter">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ng/m2</unit:symbol>
+  </unit:PhysicalUnit>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel200hPa">
+    <meteo:hasPressure>
+      <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure200hPa">
+        <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >200.0</area:hasValue>
+        <area:isInUnit rdf:resource="http://www.unit/owl#hectopascal"/>
+      </meteo:AirPressure>
+    </meteo:hasPressure>
+  </meteo:IsobaricLevel>
+  <meteo:AboveSurfaceLevel rdf:about="http://www.meteo/owl#TenMetersAboveSurface"/>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#sievert">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sv</unit:symbol>
+    <com:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sievert</com:hasName>
+  </unit:PhysicalUnit>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel70hPa">
+    <meteo:hasPressure rdf:resource="http://www.meteo/owl#pressure70hPa"/>
+  </meteo:IsobaricLevel>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#becquerelPerCubicMeter">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bq/m3</unit:symbol>
+  </unit:PhysicalUnit>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#hour">
+    <com:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hour</com:hasName>
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >h</unit:symbol>
+  </unit:PhysicalUnit>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#second">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >s</unit:symbol>
+    <com:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >second</com:hasName>
+    <unit:isSIUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</unit:isSIUnit>
+  </unit:PhysicalUnit>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#nanoSievertPerHour">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nSv/h</unit:symbol>
+  </unit:PhysicalUnit>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel600hPa">
+    <meteo:hasPressure>
+      <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure600hPa">
+        <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >600.0</area:hasValue>
+      </meteo:AirPressure>
+    </meteo:hasPressure>
+  </meteo:IsobaricLevel>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel1000hPa">
+    <meteo:hasPressure rdf:resource="http://www.meteo/owl#pressure1000hPa"/>
+  </meteo:IsobaricLevel>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel850hPa">
+    <meteo:hasPressure rdf:resource="http://www.meteo/owl#pressure850hPa"/>
+  </meteo:IsobaricLevel>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#becquerelPerSquareMeter">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bq/m2</unit:symbol>
+  </unit:PhysicalUnit>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel150hPa">
+    <meteo:hasPressure>
+      <meteo:AirPressure rdf:about="http://www.meteo/owl#pressure150hPa">
+        <area:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >150.0</area:hasValue>
+      </meteo:AirPressure>
+    </meteo:hasPressure>
+  </meteo:IsobaricLevel>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#pascal">
+    <com:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pascal</com:hasName>
+    <unit:isSIUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</unit:isSIUnit>
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pa</unit:symbol>
+  </unit:PhysicalUnit>
+  <meteo:IsobaricLevel rdf:about="http://www.meteo/owl#IsobaricLevel700hPa">
+    <meteo:hasPressure rdf:resource="http://www.meteo/owl#pressure700hPa"/>
+  </meteo:IsobaricLevel>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#meter">
+    <com:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >meter</com:hasName>
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >m</unit:symbol>
+    <unit:isSIUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</unit:isSIUnit>
+  </unit:PhysicalUnit>
+  <meteo:AboveSurfaceLevel rdf:about="http://www.meteo/owl#ZeroMetersAboveSurface"/>
+  <unit:PhysicalUnit rdf:about="http://www.unit/owl#kgPersquareMeter">
+    <unit:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >kg/m2</unit:symbol>
+  </unit:PhysicalUnit>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

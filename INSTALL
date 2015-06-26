@@ -1,0 +1,25 @@
+##############################
+# SimPack Installation Notes #
+##############################
+
+SimPack is a generic Java library of similarity measures for the use in
+ontologies and other application domains.
+
+The measures in SimPack are intended to be used out of the box. To use
+the measures put all the jar files in the lib directory on the Java
+classpath.
+
+Requirements:
+- Java 1.5 (http://java.sun.com)
+- Ant (http://ant.apache.org)
+
+Step-by-step installation:
+
+1/ Compile the SimPack sources by executing 'ant dist' on the command line.
+This results in a SimPack jar in the dist directory.
+
+2/ Put the resulting SimPack jar file in the dist directory on the java
+classpath together with all the jar files in the lib directory.
+
+Have a look at the JUnit tests in tests directory to obtain a basic
+understanding of how to use the measures.

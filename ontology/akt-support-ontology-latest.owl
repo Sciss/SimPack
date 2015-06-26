@@ -1,0 +1,1552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+    xmlns:rss="http://purl.org/rss/1.0/"
+    xmlns="http://kmi.open.ac.uk/semanticweb/ontologies/owl/kmi-basic-portal-ontology.owl#"
+    xmlns:jms="http://jena.hpl.hp.com/2003/08/jms#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xml:base="http://kmi.open.ac.uk/semanticweb/ontologies/owl/kmi-basic-portal-ontology.owl">
+
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#location">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#tangible-thing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#industrial-organization">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#profit-organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#information-transfer-medium">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generalised-means-of-transport"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="kmi-graphic-designer">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#graphic-designer"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#kmi-academic-support-staff-member"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#string">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#intangible-thing"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#individual"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>a primitive class representing string</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#degree">
+    <rdfs:comment>a degree is type of awar</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#award"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#class">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#unary-relation"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>the class of all classes.  we consider a class as a unary relation, true for all its instance</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#class-partition">
+    <rdfs:comment>returns all subclasses of a clas</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#enumerated-set"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#september">
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="A0">
+        <owl:hasValue>
+          <owl:Thing rdf:about="akt-support-ontology-latest.owl#30-day-duration"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has-duration"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#month"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#newspaper">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#periodical-publication"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#composite-publication"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#intangible-thing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#thing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#number">
+    <rdfs:comment>the class of all number</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#quantity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#government">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#government-organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#letter">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#message"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#article-reference">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#publication-reference"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#student">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="studies-in-unit"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="studies-at"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#affiliated-person"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#newsletter">
+    <rdfs:comment>merrian-webster says: a small publication (such as a leaflet or newspaper)containing news of interest chiefly to a special group</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#composite-publication"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#serial-publication"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#geopolitical-entity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#geographical-region"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generic-agent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#visiting-researcher">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#researcher"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#affiliated-person"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#november">
+    <rdfs:subClassOf rdf:nodeID="A0"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#month"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#quantity">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#individual"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#r-and-d-institute">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#learning-centred-organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#year">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#time-interval"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <owl:Thing rdf:about="akt-support-ontology-latest.owl#12-month-duration"/>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="#has-duration"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#web-technology">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#computing-technology"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <owl:Thing rdf:about="aktive-portal-ontology-latest.owl#web-research-area"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="addresses-generic-area-of-interest"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#relation">
+    <rdfs:comment>the class of defined relations.  we assume fixed arit</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#set"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#function">
+    <rdfs:comment>(apply f (arg1 .....argn)) is the same as(f arg1 ....argn)</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#set"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#multimedia-designer">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#working-person"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#freelance-software-developer">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#software-developer"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#self-employed-person"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#negative-integer">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#integer"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#publication-reference">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#abstract-information"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#temporal-thing"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>we have decided that a publication reference is an intangible, abstract informatio</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#local-district">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#geopolitical-entity"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#information-extraction-technology">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#language-engineering-technology"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#addresses-generic-area-of-interest"/>
+        <owl:hasValue>
+          <owl:Thing rdf:about="aktive-portal-ontology-latest.owl#information-extraction"/>
+        </owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#administrative-staff">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#employee"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#reader-in-academia">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#academic-staff-member"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#day">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#time-interval"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <owl:Thing rdf:about="akt-support-ontology-latest.owl#24-hour-duration"/>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="#has-duration"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="electronic-newsletter">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#newsletter"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#electronic-publication"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#unit-of-measure">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#real-number">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#number"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#research-assistant-in-academia">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#research-staff-member"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#technical-report-reference">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication-reference"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#employment-contract-type">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#calendar-date">
+    <rdfs:comment>a calendar date is a time point in which month, day and year havebeen specified but hour, minute and second have not</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#time-point"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#university">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#higher-educational-organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#town">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#municipal-unit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#city">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#municipal-unit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#senior-research-fellow-in-academia">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#research-staff-member"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#operating-system">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#implemented-system"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#government-organization">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#non-profit-organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="kmi-staff-member">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="works-for"/>
+        </owl:onProperty>
+        <owl:hasValue>
+          <owl:Thing rdf:about="aktive-portal-ontology-latest.owl#the-open-university"/>
+        </owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#higher-educational-organization-employee"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="works-in-unit"/>
+        </owl:onProperty>
+        <owl:hasValue>
+          <owl:Thing rdf:about="aktive-portal-ontology-latest.owl#knowledge-media-institute-at-the-open-university"/>
+        </owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="A1">
+        <owl:hasValue>
+          <owl:Thing rdf:ID="translated_kmi-postal-address"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has-postal-address"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#computing-technology">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#technology"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#attending-a-conference">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#attending-an-event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#academic-unit">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#educational-organization-unit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#social-gathering">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generalised-means-of-transport">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#thing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#march">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#month"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="A2">
+        <owl:onProperty rdf:resource="#has-duration"/>
+        <owl:hasValue>
+          <owl:Thing rdf:about="akt-support-ontology-latest.owl#31-day-duration"/>
+        </owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#activity-status">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#string"/>
+    <rdfs:comment>it is sufficient that somebody in unit ?u works in project ?</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#charitable-organization">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#non-profit-organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#working-person">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#person"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#physical-quantity">
+    <rdfs:comment>suo: physical quantities are distinguished from numbers by thefact that the former are associated with a dimension of measurement.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#quantity"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#binary-relation">
+    <rdfs:comment>the same as holds, but takes only one argument, a sentence whose truthvalue is to be checked</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#relation"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#isbn-number">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#string"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#project-output">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#temporal-thing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#time-interval">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#time-position"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="#has-duration"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="ends-at-time-point"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="begins-at-time-point"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>an interval is defined by two time points or a duration.classes of intervals, e.g., a day, can be defined by specifying onlya duration.  a time interval has no gaps</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#conferring-an-award">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generalized-transfer"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#june">
+    <rdfs:subClassOf rdf:nodeID="A0"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#month"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#week">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#time-interval"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#has-duration"/>
+        <owl:hasValue>
+          <owl:Thing rdf:about="akt-support-ontology-latest.owl#7-day-duration"/>
+        </owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#university-faculty">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#academic-unit"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#academic-admin-staff-member">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#academic-support-staff-member"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#administrative-staff"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#programming-environment">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#implemented-system"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#organization">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has-size"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>an organization is a type of legal agen</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#legal-agent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#partnership">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#profit-organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#event-involving-production">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#event"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>when something is produce</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#year-in-time">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#integer"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>a year-in-time must be an integer and integer can be a year-in-tim</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#event-involving-movement">
+    <rdfs:comment>this is an event in which the main agent (plus maybe others)goes from some place to another</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="location-at-end"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#event"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="location-at-start"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#educational-employee">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#employee"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="kmi-planet-news-item">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="aktive-portal-ontology-latest.owl#knowledge-media-institute-at-the-open-university"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#mentions-organization"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="included-in-publication"/>
+        </owl:onProperty>
+        <owl:hasValue>
+          <owl:Thing rdf:ID="kmi-planet-newsletter"/>
+        </owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#news-item"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#information-transfer-event">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generalized-transfer"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>a generalized transfer in which information is passed from main agent to one or morerecipient agents.  examples include giving a tutorial.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#list">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+    <rdfs:comment>returns the last element of a list.  if ?list is emptythen :nothing is returned</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#project">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has-project-member"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#activity"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="involves-organization"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="involves-organization-unit"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#april">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#month"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:nodeID="A0"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#negative-number">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#number"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#profit-organization">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#book-section-reference">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication-reference"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#organization-size">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#awarding-body">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#legal-agent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#web-reference">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication-reference"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#legal-agent">
+    <rdfs:comment>some agents have legal status: definitely organizations and people,anybody else?</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generic-agent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#february">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#month"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#second-in-time">
+    <rdfs:comment>a second-in-time is a real number greater or equal to 0, less than 6</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#real-number"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#time-position">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+    <rdfs:comment>a time position is either a time interval or a time point.any time position is relative to a time zone</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#book">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#publication"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#web-based-editor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#editor"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#web-based-system"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#educational-organization-unit">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#organization-unit"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#currency">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#information-bearing-object"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#company">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#profit-organization"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#thing">
+    <rdfs:comment>this is the top-level concept in the akt reference ontolog</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="AKTRoot" >
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+      </owl:Class>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#municipal-unit">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#geopolitical-entity"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#hardware-technology">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#computing-technology"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#amount-of-money">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#physical-quantity"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#academic-degree">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#degree"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#periodical-publication">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has-periodicity"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#serial-publication"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>this comes from the ontolingua library.a periodical-publication is published regularly, such as onceevery week.  strictly speaking, the noun 'periodical' is usedby librarians to refer to things published at intervals of greaterthan a day.  we use the phase periodical-publication to includenewspapers and other daily publications, since they share manybibliographic features.the periodicity indicates how often the publication comes out. note that this isa duration, rather than a time interval. a time interval indicates a specific time intervalon the time continuum, so we need to model periodicity as a time quantity</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#business-area">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generic-area-of-interest"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#non-negative-number">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#number"/>
+  </owl:Class>
+  <owl:Class rdf:ID="kmi-academic-support-staff-member">
+    <rdfs:subClassOf rdf:resource="#kmi-staff-member"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#academic-support-staff-member"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#giving-a-talk">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#information-transfer-event"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#professor-in-academia">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#academic-staff-member"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#magazine">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#serial-publication"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#composite-publication"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#server-technology">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#software-technology"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#web-technology"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#publication">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has-publication-reference"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>a publication is something which has one or more publication references.a publication can be both an article in a journal or a journal itself.the distinction between publication and publication-reference makes it possibleto distinguish between multiple occurrences of the same publication, for instance indifferent media</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#information-bearing-object"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#coordinate-location">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#geographical-region"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#positive-number">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#number"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#affiliated-person">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="has-affiliation"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#person"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>a person which has an affiliation with some organization.for instance employees are affiliated to the organization they work for,students to the institution where they are studying, etc..a person can have multiple affiliations, which means that there is noconstraint relating the values of slot has-affiliation-to-unit to the valuesof slot has-affiliation</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#electronic-publication">
+    <rdfs:comment>a publication produced in electronic for</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#book-publishing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#publication-type-event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#tangible-thing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#temporal-thing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#attending-an-event">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#event"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#academic-support-staff-member">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#higher-educational-organization-employee"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#secretary">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#working-person"/>
+  </owl:Class>
+  <owl:Class rdf:ID="kmi-research-staff-member">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#research-staff-member"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#kmi-staff-member"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#book-reference">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication-reference"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#language-engineering-technology">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <owl:Thing rdf:about="aktive-portal-ontology-latest.owl#language-engineering"/>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="#addresses-generic-area-of-interest"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#software-technology"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#month-in-time">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#positive-integer"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>a month-in-time is an integer in the interval 1-1</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#hour-in-time">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#non-negative-integer"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>a hour-in-time is an integer in the interval 0-2</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#programming-language">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#specification-or-computing-language"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#october">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#month"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:nodeID="A2"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#appellation">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#sending-an-email">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#information-transfer-event"/>
+    <rdfs:comment>a generalized transfer in which information is passed from main agent to one or morerecipient agents.  examples include giving a tutorial.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <owl:Thing rdf:about="aktive-portal-ontology-latest.owl#email-medium"/>
+        </owl:hasValue>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="information-transfer-medium-used"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#composite-publication">
+    <rdfs:comment>a publication which contains items which cane be themselves referenced through apublication reference.  composite publications include newspapers, magazines and journals.a book which is a collection of articles is a composite publication, a monograph is not</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="contains-publication"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#december">
+    <rdfs:subClassOf rdf:nodeID="A2"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#month"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#phd-student">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#student"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#assisted-person">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#person"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#research-fellow-in-academia">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#research-staff-member"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#implemented-system">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#software-technology"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#web-based-system">
+    <rdfs:comment>a system which is accessible through the we</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#implemented-system"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generalized-transfer">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#event-involving-movement"/>
+    <rdfs:comment>an event in which the main agent transfers something (the thing-acted-on, tangible or intangible)to one or more recipient agents.note that we do not say anything about whether the original agent still retainthe thing-acted-on.  in some cases this is clearly true ('i pass my wisdom on to my daughter'),in other cases it is not (i give you my wallet).</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#research-staff-member">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#higher-educational-organization-employee"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#researcher"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#proceedings-paper-reference">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication-reference"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#civil-service">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#government-organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#minute-in-time">
+    <rdfs:comment>a minute-in-time is an integer in the interval 0-5</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#non-negative-integer"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#graphic-designer">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#working-person"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#senior-lecturer-in-academia">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#academic-staff-member"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#unary-relation">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#relation"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#small-or-medium-sized-organization">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#organization"/>
+    <rdfs:comment>sme are important, so we define a class to represent them explicitly.in some case we might not know or we do not want to bother specifyingexcatly whether something is a small-organization or a medium-organization.hence, we can just say 'x is a sme' without going into further detail.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#postal-address">
+    <rdfs:comment>modified to allow addresses to be given as strings, with no structur</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#address"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#workshop">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#publication-type-event"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#meeting-taking-place"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#operational-ontology-specification-language">
+    <rdfs:comment>about 600 employees - i guess we consider it a medium-sized organizatio</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#ontology-specification-language"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#time-point">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hour-of"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="day-of"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="second-of"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>a point in tim</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#time-position"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="year-of"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="month-of"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="minute-of"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#method">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+    <rdfs:comment>merrian-webster has a good set of definitions for a method.they say it is 'a systematic procedure,technique, or mode of inquiry employed by or proper to a particulardiscipline or art;  a systematic plan followed in presentingmaterial for instruction; a way, technique, orprocess of or for doing something; a body of skills or techniques'.this is very much also what we mean by method.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#publishing-house">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#non-profit-organization">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#political-organization">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#knowledge-programming-language">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#programming-language"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#learning-centred-organization">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#software-visualization-technology">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#software-technology"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <owl:Thing rdf:about="aktive-portal-ontology-latest.owl#"/>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="#addresses-generic-area-of-interest"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#software-technology">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#computing-technology"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#integer">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#real-number"/>
+    <rdfs:comment>a predicate to test whether a number is greater than anothe</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="kmi-phd-student">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#studies-at"/>
+        <owl:hasValue rdf:resource="aktive-portal-ontology-latest.owl#the-open-university"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:nodeID="A1"/>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#phd-student"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="aktive-portal-ontology-latest.owl#knowledge-media-institute-at-the-open-university"/>
+        <owl:onProperty rdf:resource="#studies-in-unit"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#conference-proceedings-reference">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication-reference"/>
+  </owl:Class>
+  <owl:Class rdf:ID="kmi-multimedia-designer">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#multimedia-designer"/>
+    <rdfs:subClassOf rdf:resource="#kmi-academic-support-staff-member"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#timezone">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#string"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#email-message">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#message"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#thesis-reference">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication-reference"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#event">
+    <rdfs:comment>this is a minimalist definition of class event.  we start with the very basicand we will then add slots as we specialise this definition for specific classes of events.the fillers of slots has-other-agents-involved and has-main-agent should notintersect</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#temporal-thing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#meeting-taking-place">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#social-gathering"/>
+    <rdfs:comment>a meeting type of event. note that both attendee and organizer havemultiple cardinality</rdfs:comment>
+  </owl:Class>
+  
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#r-and-d-institute-within-larger-organization">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="AKTRoot" >
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+      </owl:Class>
+    </rdfs:subClassOf>
+  </owl:Class>
+  
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#project-officer-in-academia">
+    <rdfs:comment>people and in general even organizations and organization unitsmay have research interests.  this relation shoudl be used tospecify them</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#academic-support-staff-member"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#article-in-a-composite-publication">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#august">
+    <rdfs:subClassOf rdf:nodeID="A2"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#month"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#work-status">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#academic-support-unit">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#educational-organization-unit"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#daily-newspaper">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#newspaper"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="akt-support-ontology-latest.owl#24-hour-duration"/>
+        <owl:onProperty rdf:resource="#has-periodicity"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#information-bearing-object">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#tangible-thing"/>
+    <rdfs:comment>this notion comes from cyc.  it is useful to group together allinformation bearing entities, including video, audio and documents.an information bearing object may have an author (a generic agent)and may be owned by a legal agent. it is a tangible object</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#serial-publication">
+    <rdfs:comment>this used to be called periodical publication.  however, many periodicalsdo not appear at fixed intervals, which is why librarians refer to them as serials.so, we now use the concept of serial publication and the has-periodicity slot has beenremoved</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#software-developer">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#working-person"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#organization-unit">
+    <rdfs:comment>an organization may have a number of units. units may themselves have sub-unit</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generic-agent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#self-employed-person">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#working-person"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#geographical-datum">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#multimedia-technology">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#software-technology"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#addresses-generic-area-of-interest"/>
+        <owl:hasValue>
+          <owl:Thing rdf:about="aktive-portal-ontology-latest.owl#multimedia-research-area"/>
+        </owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#activity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#temporal-thing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#financial-award">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#award"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generic-agent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#temporal-thing"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>this is a generic notion, an agent can be an organization, a personan animal, a software agent, etc</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#academic-staff-member">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#higher-educational-organization-employee"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#recorded-audio">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#information-bearing-object"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#individual">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#thing"/>
+    <rdfs:comment>something which is not a set</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#r-and-d-institute-within-educational-organization">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#r-and-d-institute-within-larger-organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#gender">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+    <rdfs:comment>hpkb says that genders are intangible..uhm..</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#transportation-device">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#tangible-thing"/>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#generalised-means-of-transport"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#web-site">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#information-bearing-object"/>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#implemented-system"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#village">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#municipal-unit"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#award">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#editor">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#implemented-system"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#recorded-video">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#information-bearing-object"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#lecturer-in-academia">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#academic-staff-member"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#july">
+    <rdfs:subClassOf rdf:nodeID="A2"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#month"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#message">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#information-bearing-object"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#enumerated-set">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#set"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>a tuple, say &lt;t1 t2 t3> is an element of function f iff(= (apply f ti t2) t3) is satisfied</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="kmi-academic-staff-member">
+    <rdfs:subClassOf rdf:resource="#kmi-staff-member"/>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#academic-staff-member"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#non-negative-integer">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#integer"/>
+    <rdfs:comment>divides number</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#positive-integer">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#integer"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#specification-or-computing-language">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#software-technology"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#ontology-specification-language">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <owl:Thing rdf:about="aktive-portal-ontology-latest.owl#ontologies"/>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="#addresses-generic-area-of-interest"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#specification-language"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#country">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#geopolitical-entity"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#research-area">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generic-area-of-interest"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#higher-educational-organization-employee">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#educational-employee"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#news-item">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#article-in-a-composite-publication"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#higher-educational-organization">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#educational-organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#capital-city">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#city"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#month">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#time-interval"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#may">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#month"/>
+    <rdfs:subClassOf rdf:nodeID="A2"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#web-browser">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#implemented-system"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#url">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#string"/>
+    <rdfs:comment>a url is a particular type of strin</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#hardware-platform">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#hardware-technology"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#school">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#educational-organization"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#duration">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#physical-quantity"/>
+    <rdfs:comment>a measure of time, e.g., 5 hour</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#conference">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#publication-type-event"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#meeting-taking-place"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#day-in-time">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#positive-integer"/>
+    <rdfs:comment>a day-in-time is an integer in the interval 1-3</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#set">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+    <rdfs:comment>this is the basic set constructor to create a set by enumerating its elements.for instance, (setof 1 2) denotes the set {1 2}.we represent such a set as a list whose first item is :set</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#workshop-proceedings-reference">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication-reference"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#researcher">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#working-person"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#private-company">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#company"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#technology">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="akt-support-ontology-latest.owl#temporal-thing"/>
+    </rdfs:subClassOf>
+    <rdfs:comment>by technology we mean engineered applications of science.i guess we are probably confining ourselves to tangible thingsbut as i am not sure i will use thing as the direct superclass -e.g., an algorithm is an intangible thing, but it could be seen asa technology, if we give a broad interpretation of the term</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#scripting-language">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#programming-language"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#generic-area-of-interest">
+    <rdfs:comment>a generic class to specify generic areas for research or business initiatives.for instance, the area in which a project is situated</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#knowledge-modelling-technology">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#addresses-generic-area-of-interest"/>
+        <owl:hasValue>
+          <owl:Thing rdf:about="aktive-portal-ontology-latest.owl#knowledge-modelling"/>
+        </owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#software-technology"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#edited-book">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#publication"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#publication-type-event">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#event-involving-production"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#geographical-region">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#location"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#address">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="aktive-portal-ontology-latest.owl#abstract-information"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#public-company">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#company"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#employee">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#affiliated-person"/>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#working-person"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#time-measure">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#unit-of-measure"/>
+    <rdfs:comment>the duration between two time points.no operational definition is given here, only a spec</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#system-administrator">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#working-person"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#software-status">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#edited-book-reference">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#book-reference"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#agent-technology">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <owl:Thing rdf:about="aktive-portal-ontology-latest.owl#agent-based-computing"/>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="#addresses-generic-area-of-interest"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#software-technology"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#email-address">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#string"/>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#address"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#specification-language">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#specification-or-computing-language"/>
+  </owl:Class>
+  <owl:Class rdf:ID="kmi-system-administrator">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#system-administrator"/>
+    <rdfs:subClassOf rdf:resource="#kmi-academic-support-staff-member"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#educational-organization">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#learning-centred-organization"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#grant">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#financial-award"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#person">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#legal-agent"/>
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#tangible-thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#abstract-information">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#intangible-thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#journal">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#composite-publication"/>
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#serial-publication"/>
+  </owl:Class>
+  <owl:Class rdf:about="aktive-portal-ontology-latest.owl#distance-teaching-university">
+    <rdfs:subClassOf rdf:resource="aktive-portal-ontology-latest.owl#university"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#january">
+    <rdfs:subClassOf rdf:nodeID="A2"/>
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#month"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#february-in-leap-years">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue>
+          <owl:Thing rdf:about="akt-support-ontology-latest.owl#29-day-duration"/>
+        </owl:hasValue>
+        <owl:onProperty rdf:resource="#has-duration"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#february"/>
+  </owl:Class>
+  <owl:Class rdf:about="akt-support-ontology-latest.owl#temporal-thing">
+    <rdfs:subClassOf rdf:resource="akt-support-ontology-latest.owl#thing"/>
+    <rdfs:comment>like in cyc, this is something which has a temporal extent</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="has-story-content">
+    <rdfs:range rdf:resource="akt-support-ontology-latest.owl#string"/>
+    <rdfs:domain rdf:resource="#kmi-planet-news-item"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="aktive-portal-ontology-latest.owl#aktive-portal-ontology-latest:published-in-conference">
+    <rdfs:range rdf:resource="aktive-portal-ontology-latest.owl#conference"/>
+    <rdfs:domain rdf:resource="aktive-portal-ontology-latest.owl#conference-proceedings-reference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="mentions-person">
+    <rdfs:range rdf:resource="aktive-portal-ontology-latest.owl#person"/>
+    <rdfs:domain rdf:resource="#kmi-planet-news-item"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="mentions-project">
+    <rdfs:range rdf:resource="aktive-portal-ontology-latest.owl#project"/>
+    <rdfs:domain rdf:resource="#kmi-planet-news-item"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="mentions-organization">
+    <rdfs:range rdf:resource="aktive-portal-ontology-latest.owl#organization"/>
+    <rdfs:domain rdf:resource="#kmi-planet-news-item"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has-story-category">
+    <rdfs:domain rdf:resource="#kmi-planet-news-item"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="aktive-portal-ontology-latest.owl#aktive-portal-ontology-latest:thing-acted-on">
+    <rdfs:range rdf:resource="akt-support-ontology-latest.owl#individual"/>
+    <rdfs:domain rdf:resource="aktive-portal-ontology-latest.owl#generalized-transfer"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="aktive-portal-ontology-latest.owl#aktive-portal-ontology-latest:published-in-workshop">
+    <rdfs:range rdf:resource="aktive-portal-ontology-latest.owl#workshop"/>
+    <rdfs:domain rdf:resource="aktive-portal-ontology-latest.owl#workshop-proceedings-reference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="mentions-technology">
+    <rdfs:range rdf:resource="aktive-portal-ontology-latest.owl#technology"/>
+    <rdfs:domain rdf:resource="#kmi-planet-news-item"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="mentions-research-area">
+    <rdfs:range rdf:resource="aktive-portal-ontology-latest.owl#research-area"/>
+    <rdfs:domain rdf:resource="#kmi-planet-news-item"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
