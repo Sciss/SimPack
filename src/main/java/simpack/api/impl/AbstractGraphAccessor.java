@@ -130,8 +130,11 @@ public abstract class AbstractGraphAccessor implements IGraphAccessor {
 		return root;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+     * Establishes a directed edge between two vertices. If either of
+	 * the vertices is not part of the graph yet, they will be added to it.
+	 * Otherwise, it conveniently calls `addSuccessor` and `addPredecessor`
+	 * for the vertices.
 	 * 
 	 * @see simpack.api.IGraphAccessor#setEdge(simpack.api.IGraphNode,
 	 *      simpack.api.IGraphNode)
